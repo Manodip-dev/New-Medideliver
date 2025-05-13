@@ -66,6 +66,21 @@
     --hero-overlay: rgba(255, 255, 255, 0.5); /* Light theme overlay */
     --navbar-height: 0; /* CSS variable for dynamic navbar height */
     --hero-bg-color: #e2e8f0; /* Solid background color for hero */
+
+    /* Cart UI Colors */
+    --cart-ui-bg: #ffffff;
+    --cart-ui-border: #e2e8f0;
+    --cart-ui-shadow: rgba(0, 0, 0, 0.2);
+    --cart-item-border: #e2e8f0;
+    --cart-item-remove-btn: #e53e3e;
+    --cart-item-remove-btn-hover: #c53030;
+    --quantity-control-border: #ccc;
+    --quantity-btn-bg: #eee;
+    --quantity-btn-hover-bg: #ddd;
+    --quantity-text-color: #2d3748;
+    --cart-total-color: #1a202c;
+    --cart-empty-text: #718096;
+
 }
 
 body.dark-theme {
@@ -126,6 +141,21 @@ body.dark-theme {
     --hero-image-shadow: rgba(0, 0, 0, 0.3);
     --hero-overlay: rgba(0, 0, 0, 0.5); /* Dark theme overlay */
      --hero-bg-color: #2d3748; /* Solid background color for hero in dark mode */
+
+     /* Cart UI Colors (Dark Theme) */
+    --cart-ui-bg: #2d3748;
+    --cart-ui-border: #4a5568;
+    --cart-ui-shadow: rgba(0, 0, 0, 0.4);
+    --cart-item-border: #4a5568;
+    --cart-item-remove-btn: #f56565;
+    --cart-item-remove-btn-hover: #e53e3e;
+    --quantity-control-border: #a0aec0;
+    --quantity-btn-bg: #4a5568;
+    --quantity-btn-hover-bg: #5a6578;
+    --quantity-text-color: #e2e8f0;
+    --cart-total-color: #e2e8f0;
+    --cart-empty-text: #a0aec0;
+
 }
 
 
@@ -218,11 +248,16 @@ ul {
     padding: 12px 25px;
     border-radius: 8px;
     font-weight: 600;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.1s ease; /* Added transform for active effect */
     border: none;
     cursor: pointer;
     text-align: center;
 }
+
+.btn:active {
+    transform: scale(0.98); /* Simple press animation */
+}
+
 
 .btn-primary {
     background-color: var(--primary-button-bg); /* Use CSS variable */
@@ -252,11 +287,20 @@ ul {
     display: flex;
     align-items: center;
     gap: 5px;
+    font-size: 1.2rem; /* Adjusted default icon size */
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-icon:hover {
     color: var(--heading-color); /* Use CSS variable */
+    transform: scale(1.1); /* Slightly enlarge on hover */
 }
+
+.btn-icon .btn-text {
+    font-size: 1rem; /* Text size for icons */
+    font-weight: 500;
+}
+
 
 .btn-small {
     padding: 8px 15px;
@@ -264,11 +308,11 @@ ul {
 }
 
 .theme-toggle-btn {
-    transition: color 0.3s ease, transform 0.3s ease;
+    transition: color 0.3s ease;
 }
 
-.theme-toggle-btn:hover {
-    transform: scale(1.1);
+.theme-toggle-btn i {
+    font-size: 1.3rem; /* Ensure theme icon is a good size */
 }
 
 
@@ -313,6 +357,8 @@ ul {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    height: 60px; /* Define height for collapsed state */
+     padding: 0 20px; /* Padding for collapsed state */
 }
 
 /* State when navbar is collapsed on desktop */
@@ -370,6 +416,7 @@ ul {
     color: var(--location-text-color); /* Use CSS variable */
     cursor: pointer;
     position: relative; /* For dropdown positioning */
+    font-size: 0.9rem; /* Adjusted location text size */
 }
 
 .navbar-location .location-text {
@@ -411,6 +458,7 @@ ul {
     border-radius: 4px;
     background-color: var(--location-dropdown-input-bg); /* Use CSS variable */
     color: var(--location-dropdown-input-color); /* Use CSS variable */
+    font-size: 0.9rem; /* Adjusted input size */
 }
 
 .location-dropdown input::placeholder {
@@ -466,6 +514,7 @@ ul {
     outline: none;
     width: calc(100% - 40px); /* Adjust based on button width */
     font-family: 'Lexend', sans-serif; /* Apply Lexend font */
+    font-size: 1rem; /* Adjusted input size */
 }
 
 .search-input::placeholder {
@@ -479,6 +528,7 @@ ul {
     cursor: pointer;
     color: var(--search-button-color); /* Use CSS variable */
     transition: color 0.3s ease;
+    font-size: 1.1rem; /* Adjusted search icon size */
 }
 
 .search-button:hover {
@@ -495,18 +545,22 @@ ul {
     position: relative;
 }
 
+.cart-btn i {
+    font-size: 1.3rem; /* Adjusted cart icon size */
+}
+
 .cart-count {
     position: absolute;
-    top: -5px;
-    right: -5px;
+    top: -8px; /* Adjusted position */
+    right: -8px; /* Adjusted position */
     background-color: var(--cart-count-bg); /* Use CSS variable */
     color: var(--cart-count-text); /* Use CSS variable */
     font-size: 0.7rem;
     font-weight: 700;
     border-radius: 50%; /* Make it round */
-    padding: 3px 6px;
-    min-width: 20px; /* Ensure minimum size for circular shape */
-    height: 20px; /* Ensure height matches min-width */
+    padding: 2px 5px; /* Adjusted padding */
+    min-width: 18px; /* Ensure minimum size for circular shape */
+    height: 18px; /* Ensure height matches min-width */
     display: flex; /* Use flexbox to center content */
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
@@ -520,6 +574,11 @@ ul {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    height: 60px; /* Define height for collapsed state */
+    padding: 0 20px; /* Padding for collapsed state */
 }
 
 .navbar-brand-search {
@@ -539,6 +598,8 @@ ul {
     border-radius: 8px;
     overflow: hidden;
     width: 300px; /* Smaller search bar in collapsed state */
+     /* Transition for width */
+    transition: width 0.3s ease-in-out;
 }
 
 .search-box-collapsed input {
@@ -563,6 +624,7 @@ ul {
     cursor: pointer;
     color: var(--search-button-color);
     transition: color 0.3s ease;
+    font-size: 1rem; /* Adjusted collapsed search icon size */
 }
 
 .search-box-collapsed button:hover {
@@ -573,6 +635,16 @@ ul {
     display: flex;
     align-items: center;
     gap: 10px; /* Smaller gap between utility items */
+}
+
+/* Collapsed desktop utility icons - hide text */
+.navbar-essential-desktop-collapsed .btn-icon .btn-text {
+    display: none;
+}
+
+/* Collapsed desktop utility icons - adjust size */
+.navbar-essential-desktop-collapsed .btn-icon i {
+     font-size: 1.2rem;
 }
 
 
@@ -603,9 +675,9 @@ ul {
     background: none;
     border: none;
     color: var(--text-color);
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Adjusted mobile toggler size */
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Smooth rotation transition */
 }
 
 .navbar-toggler.active i {
@@ -643,6 +715,7 @@ ul {
     cursor: pointer;
     color: var(--search-button-color);
     transition: color 0.3s ease;
+    font-size: 1.1rem; /* Adjusted mobile search icon size */
 }
 
 .search-box-mobile button:hover {
@@ -656,6 +729,16 @@ ul {
     justify-content: flex-end; /* Align to the right */
     width: 100%;
 }
+
+/* Mobile utility icons size - hide text */
+.navbar-utility-mobile .btn-icon .btn-text {
+    display: none;
+}
+
+.navbar-utility-mobile .btn-icon i {
+    font-size: 1.3rem; /* Ensure appropriate size */
+}
+
 
 .navbar-mobile-menu {
     overflow: hidden; /* Hide when collapsed */
@@ -723,6 +806,8 @@ ul {
     font-size: 3.5rem;
     margin-bottom: 15px;
     color: var(--hero-heading-color); /* Use CSS variable */
+     /* Responsive font size for hero heading */
+     transition: font-size 0.3s ease;
 }
 
 .hero-content p {
@@ -903,6 +988,53 @@ ul {
 .product-card .btn {
     align-self: flex-start; /* Align button to the start */
 }
+
+/* Quantity Control on Product Cards */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--quantity-control-border);
+    border-radius: 8px;
+    padding: 5px;
+    width: fit-content; /* Adjust width based on content */
+     /* Transition for showing/hiding */
+     opacity: 1;
+     visibility: visible;
+     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.quantity-control.hidden {
+     opacity: 0;
+     visibility: hidden;
+     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; /* Delayed visibility hide */
+}
+
+
+.quantity-btn {
+    background-color: var(--quantity-btn-bg);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: var(--quantity-btn-hover-bg);
+}
+
+.quantity {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--quantity-text-color);
+    min-width: 20px; /* Ensure space for number */
+    text-align: center;
+}
+
 
 /* Carousel Arrows */
 .carousel-arrow {
@@ -1096,7 +1228,7 @@ ul {
 }
 
 .faq-question i {
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease; /* Smooth rotation transition */
     flex-shrink: 0; /* Prevent icon from shrinking */
 }
 
@@ -1104,6 +1236,7 @@ ul {
     padding: 0 20px 20px 20px;
     color: var(--faq-answer-text); /* Use CSS variable */
     display: none; /* Hidden by default */
+    /* Transition for max-height is handled in JS */
 }
 
 .faq-item.active .faq-answer {
@@ -1273,7 +1406,7 @@ ul {
     outline: none;
     cursor: pointer;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.1s ease; /* Added transform */
     opacity: 0;
     visibility: hidden;
 }
@@ -1288,6 +1421,250 @@ ul {
 
 #back-to-top-btn:hover {
     background-color: var(--primary-button-hover-bg); /* Darken on hover */
+}
+
+#back-to-top-btn:active {
+    transform: scale(0.9); /* Simple press animation */
+}
+
+
+/* Cart Sidebar/Popup Styles */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1001; /* Above navbar */
+    display: none; /* Hidden by default */
+     /* Animation for fading in/out */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.cart-overlay.show {
+     display: block; /* Show the overlay */
+     opacity: 1;
+     visibility: visible;
+     transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Desktop Sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px; /* Sidebar width */
+    height: 100%;
+    background-color: var(--cart-ui-bg); /* Use CSS variable */
+    box-shadow: -5px 0 15px var(--cart-ui-shadow); /* Shadow on the left */
+    z-index: 1002; /* Above overlay */
+    display: flex;
+    flex-direction: column;
+    /* Initially hidden off-screen */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-sidebar.show {
+    transform: translateX(0); /* Slide in */
+}
+
+/* Mobile/Tablet Popup */
+.cart-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Popup width */
+    max-width: 400px; /* Max width for popup */
+    background-color: var(--cart-ui-bg); /* Use CSS variable */
+    box-shadow: 0 5px 15px var(--cart-ui-shadow);
+    z-index: 1002; /* Above overlay */
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    /* Initially hidden */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.cart-popup.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Cart UI Header */
+.sidebar-header, .popup-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--cart-ui-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sidebar-header h3, .popup-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--heading-color);
+}
+
+.close-cart-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-cart-btn:hover {
+    color: var(--primary-button-bg);
+}
+
+/* Cart UI Body (Item List) */
+.sidebar-body, .popup-body {
+    flex-grow: 1; /* Take available space */
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    -webkit-overflow-scrolling: touch; /* Improve scrolling performance on iOS */
+}
+
+.cart-empty-message {
+    text-align: center;
+    color: var(--cart-empty-text);
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+.cart-items-list .cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--cart-item-border);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.cart-items-list .cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.cart-item-details {
+    flex-grow: 1; /* Allow details to take space */
+}
+
+.cart-item-details h4 {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    color: var(--heading-color);
+}
+
+.cart-item-details p {
+    font-size: 0.9rem;
+    color: var(--footer-text-color);
+    margin: 0;
+}
+
+.cart-item-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--price-color);
+    margin-top: 5px;
+}
+
+.cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0; /* Prevent actions from shrinking */
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    color: var(--cart-item-remove-btn);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cart-item-remove:hover {
+    color: var(--cart-item-remove-btn-hover);
+}
+
+.cart-item-quantity-control {
+     display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid var(--quantity-control-border);
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.cart-item-quantity-control .quantity-btn {
+     padding: 3px 8px; /* Smaller padding for item quantity control */
+     font-size: 0.9rem;
+}
+
+.cart-item-quantity-control .quantity {
+    font-size: 1rem;
+    min-width: 15px; /* Smaller width for item quantity number */
+}
+
+
+/* Cart UI Footer */
+.sidebar-footer, .popup-footer {
+    padding: 20px;
+    border-top: 1px solid var(--cart-ui-border);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cart-summary {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cart-total-color);
+}
+
+.cart-summary span {
+    font-weight: 700;
+    color: var(--price-color);
+}
+
+.sidebar-footer .btn, .popup-footer .btn {
+    width: 100%; /* Full width buttons */
+}
+
+/* Ensure buttons have appropriate margin */
+.sidebar-footer .go-to-cart-btn,
+.popup-footer .go-to-cart-btn {
+    margin-top: 0;
+}
+
+
+/* Hide desktop sidebar and show mobile popup by default */
+.cart-sidebar, .cart-popup {
+    display: none;
 }
 
 
@@ -1369,6 +1746,15 @@ ul {
     .footer-col-header h3 {
         margin-bottom: 20px; /* Restore desktop margin */
     }
+
+     /* Show desktop sidebar and hide mobile popup */
+     .cart-sidebar {
+         display: flex; /* Show on desktop when active */
+     }
+
+     .cart-popup {
+         display: none; /* Hide on desktop */
+     }
 }
 
 
@@ -1416,6 +1802,7 @@ ul {
 
     .navbar-toggler {
         display: block; /* Show hamburger menu on smaller screens */
+         font-size: 1.5rem; /* Ensure appropriate size */
     }
 
     .search-box-mobile {
@@ -1431,6 +1818,7 @@ ul {
 
     .search-box-mobile button {
         padding: 10px;
+        font-size: 1.1rem; /* Ensure appropriate size */
     }
 
     .navbar-utility-mobile {
@@ -1440,6 +1828,16 @@ ul {
         justify-content: flex-end; /* Align to the right */
         width: 100%;
     }
+
+    /* Mobile utility icons size - hide text */
+    .navbar-utility-mobile .btn-icon .btn-text {
+        display: none;
+    }
+
+    .navbar-utility-mobile .btn-icon i {
+         font-size: 1.3rem; /* Ensure appropriate size */
+    }
+
 
     .navbar-mobile-menu {
         overflow: hidden; /* Hide when collapsed */
@@ -1592,6 +1990,15 @@ ul {
         display: flex; /* Show on mobile */
     }
 
+     /* Hide desktop sidebar and show mobile popup */
+     .cart-sidebar {
+         display: none; /* Hide on tablet/mobile */
+     }
+
+     .cart-popup {
+         display: flex; /* Show on tablet/mobile when active */
+     }
+
 
 }
 
@@ -1616,15 +2023,15 @@ ul {
 
 
     h1 {
-        font-size: 2.5rem;
+        font-size: 2rem; /* Adjusted font size for very small mobile */
     }
 
     h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .section-padding {
-        padding: 60px 0;
+        padding: 40px 0; /* Reduced padding on very small mobile */
     }
 
      .category-grid,
@@ -1680,5 +2087,35 @@ ul {
     .feature-text {
          text-align: center; /* Center text */
     }
-}
 
+     /* Show footer toggle icon on mobile */
+    .footer-toggle-icon {
+        display: block;
+    }
+
+     /* Hide footer content by default on mobile */
+    .footer-col-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* Show footer content when active on mobile */
+    .footer-col.active .footer-col-content {
+        max-height: 500px; /* Adjust as needed */
+    }
+
+     /* Remove default margin-bottom from footer h3 when toggle is present */
+    .footer-col-header h3 {
+        margin-bottom: 0;
+    }
+
+    /* Show Back to Top button on mobile */
+    #back-to-top-btn {
+        display: flex; /* Show on mobile */
+    }
+     /* Adjust mobile popup size */
+     .cart-popup {
+         width: 95%;
+     }
+}

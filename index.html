@@ -13,40 +13,78 @@
     <header class="navbar">
         <div class="container">
             <div class="navbar-desktop">
-                <div class="navbar-top">
-                    <div class="navbar-brand-location">
-                        <div class="navbar-brand">
-                            <a href="#" class="site-logo">MediDeliver</a>
-                        </div>
-                        <div class="navbar-location">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span id="current-location" class="location-text">Select Location</span>
-                            <i class="fas fa-chevron-down location-dropdown-icon"></i>
-                            <div class="location-dropdown">
-                                <input type="text" placeholder="Enter Pincode or City">
-                                <button>Update</button>
+                <div class="navbar-desktop-full">
+                    <div class="navbar-top">
+                        <div class="navbar-brand-location">
+                            <div class="navbar-brand">
+                                <a href="#" class="site-logo">MediDeliver</a>
+                            </div>
+                            <div class="navbar-location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="current-location" class="location-text">Select Location</span>
+                                <i class="fas fa-chevron-down location-dropdown-icon"></i>
+                                <div class="location-dropdown">
+                                    <input type="text" placeholder="Enter Pincode or City">
+                                    <button>Update</button>
+                                </div>
                             </div>
                         </div>
+                        <nav class="navbar-nav-top">
+                            <ul>
+                                <li><a href="#categories">Buy Medicines</a></li>
+                                <li><a href="#">Find Nearby Pharma Stores</a></li>
+                                <li><a href="#">Find Nearby Labs</a></li>
+                            </ul>
+                        </nav>
                     </div>
-                    <nav class="navbar-nav-top">
-                        <ul>
-                            <li><a href="#categories">Buy Medicines</a></li>
-                            <li><a href="#">Find Nearby Pharma Stores</a></li>
-                            <li><a href="#">Find Nearby Labs</a></li>
-                        </ul>
-                    </nav>
+                    <div class="navbar-bottom">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search Medicines..." class="search-input">
+                            <button class="search-button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="navbar-utility-bottom">
+                            <a href="#" class="btn btn-icon">
+                                <i class="fas fa-tags"></i>
+                                <span class="btn-text">Offers</span>
+                            </a>
+                            <a href="#" class="btn btn-icon">
+                                <i class="fas fa-user"></i>
+                                <span class="btn-text">Login</span>
+                            </a>
+                            <button id="theme-toggle-desktop-full" class="btn btn-icon theme-toggle-btn" aria-label="Toggle theme">
+                                </button>
+                            <a href="#" class="btn btn-icon cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="btn-text">Cart</span>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
-                <div class="navbar-bottom">
-                    <div class="search-box">
-                        <input type="text" placeholder="Search Medicines..." class="search-input">
-                        <button class="search-button"><i class="fas fa-search"></i></button>
-                    </div>
-                    <div class="navbar-utility-bottom">
-                        <a href="#" class="btn btn-icon"><i class="fas fa-tags"></i></a>
-                        <a href="#" class="btn btn-icon"><i class="fas fa-user"></i></a>
-                        <button id="theme-toggle-desktop-full" class="btn btn-icon theme-toggle-btn" aria-label="Toggle theme">
-                            </button>
-                        <a href="#" class="btn btn-icon cart-btn"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+
+                <div class="navbar-desktop-collapsed">
+                     <div class="navbar-brand-search">
+                        <div class="navbar-brand-collapsed">
+                            <a href="#" class="site-logo">MediDeliver</a>
+                        </div>
+                         <div class="search-box-collapsed">
+                            <input type="text" placeholder="Search..." class="search-input-collapsed">
+                            <button class="search-button-collapsed"><i class="fas fa-search"></i></button>
+                        </div>
+                     </div>
+                     <div class="navbar-essential-desktop-collapsed">
+                         <button id="theme-toggle-desktop-collapsed" class="btn btn-icon theme-toggle-btn" aria-label="Toggle theme">
+                             </button>
+                         <a href="#" class="btn btn-icon">
+                             <i class="fas fa-tags"></i>
+                             <span class="btn-text">Offers</span> </a>
+                         <a href="#" class="btn btn-icon">
+                             <i class="fas fa-user"></i>
+                             <span class="btn-text">Login</span> </a>
+                        <a href="#" class="btn btn-icon cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                             <span class="btn-text">Cart</span> <span class="cart-count">0</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -81,7 +119,6 @@
                     </nav>
                 </div>
             </div>
-
         </div>
     </header>
 
@@ -162,7 +199,7 @@
             <h2>Special Offers & Deals</h2>
             <div class="carousel-container">
                 <div class="carousel-track featured-grid">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="1" data-product-name="Product Name 1" data-product-price="99.00" data-product-image="./images/Product Image (1).jpg">
                          <img src="./images/Product Image  (1).jpg" alt="Product Name 1">
                         <div class="card-content">
                             <h3>Product Name 1</h3>
@@ -172,10 +209,15 @@
                                 <span class="old-price">₹129.00</span>
                             </div>
                             <span class="discount-badge">20% OFF</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="2" data-product-name="Brand Deal Item 2" data-product-price="195.00" data-product-image="./images/Product Image (2).jpg">
                          <img src="./images/Product Image  (2).jpg" alt="Product Name 2">
                         <div class="card-content">
                             <h3>Brand Deal Item 2</h3>
@@ -185,10 +227,15 @@
                                 <span class="old-price">₹250.00</span>
                             </div>
                              <span class="discount-badge">Save ₹55.00</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                            <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="3" data-product-name="Today's Special 3" data-product-price="50.00" data-product-image="./images/Product Image (3).jpg">
                          <img src="./images/Product Image  (3).jpg" alt="Product Name 3">
                         <div class="card-content">
                             <h3>Today's Special 3</h3>
@@ -198,10 +245,15 @@
                                 <span class="old-price">₹75.00</span>
                             </div>
                              <span class="discount-badge">Flash Deal!</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                            <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="4" data-product-name="Product Name 4" data-product-price="150.00" data-product-image="./images/Product Image (4).jpg">
                          <img src="./images/Product Image  (4).jpg" alt="Product Name 4">
                         <div class="card-content">
                             <h3>Product Name 4</h3>
@@ -211,10 +263,15 @@
                                 <span class="old-price">₹180.00</span>
                             </div>
                              <span class="discount-badge">₹30 OFF</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="5" data-product-name="Product Name 5" data-product-price="220.00" data-product-image="./images/Product Image (5).jpg">
                          <img src="./images/Product Image  (5).jpg" alt="Product Name 5">
                         <div class="card-content">
                             <h3>Product Name 5</h3>
@@ -224,10 +281,15 @@
                                 <span class="old-price">₹280.00</span>
                             </div>
                              <span class="discount-badge">Save ₹60.00</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="6" data-product-name="Product Name 6" data-product-price="80.00" data-product-image="./images/Product Image (6).jpg">
                          <img src="./images/Product Image  (6).jpg" alt="Product Name 6">
                         <div class="card-content">
                             <h3>Product Name 6</h3>
@@ -237,10 +299,15 @@
                                 <span class="old-price">₹100.00</span>
                             </div>
                              <span class="discount-badge">20% OFF</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="7" data-product-name="Special bundle offer" data-product-price="350.00" data-product-image="./images/Product Image (7).jpg">
                          <img src="./images/Product Image  (7).jpg" alt="Product Name 7">
                         <div class="card-content">
                             <h3>Special bundle offer.</h3>
@@ -250,10 +317,15 @@
                                 <span class="old-price">₹400.00</span>
                             </div>
                              <span class="discount-badge">Bundle Deal</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="8" data-product-name="Product Name 8" data-product-price="110.00" data-product-image="./images/Product Image (8).jpg">
                          <img src="./images/Product Image  (8).jpg" alt="Product Name 8">
                         <div class="card-content">
                             <h3>Product Name 8</h3>
@@ -263,10 +335,15 @@
                                 <span class="old-price">₹130.00</span>
                             </div>
                              <span class="discount-badge">₹20 OFF</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="9" data-product-name="Product Name 9" data-product-price="60.00" data-product-image="./images/Product Image (9).jpg">
                          <img src="./images/Product Image  (9).jpg" alt="Product Name 9">
                         <div class="card-content">
                             <h3>Product Name 9</h3>
@@ -276,10 +353,15 @@
                                 <span class="old-price">₹80.00</span>
                             </div>
                              <span class="discount-badge">Save ₹20.00</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="10" data-product-name="Product Name 10" data-product-price="299.00" data-product-image="./images/Product Image (10).jpg">
                          <img src="./images/Product Image  (10).jpg" alt="Product Name 10">
                         <div class="card-content">
                             <h3>Product Name 10</h3>
@@ -289,10 +371,15 @@
                                 <span class="old-price">₹350.00</span>
                             </div>
                              <span class="discount-badge">₹51 OFF</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="11" data-product-name="Product Name 11" data-product-price="450.00" data-product-image="./images/Product Image (11).jpg">
                          <img src="./images/Product Image  (11).jpg" alt="Product Name 11">
                         <div class="card-content">
                             <h3>Product Name 11</h3>
@@ -302,10 +389,15 @@
                                 <span class="old-price">₹500.00</span>
                             </div>
                              <span class="discount-badge">Save ₹50.00</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="12" data-product-name="Product Name 12" data-product-price="180.00" data-product-image="./images/Product Image (12).jpg">
                          <img src="./images/Product Image  (12).jpg" alt="Product Name 12">
                         <div class="card-content">
                             <h3>Product Name 12</h3>
@@ -315,7 +407,12 @@
                                 <span class="old-price">₹200.00</span>
                             </div>
                              <span class="discount-badge">₹20 OFF</span>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
                     </div>
@@ -332,7 +429,7 @@
             <h2>Most Popular Items</h2>
             <div class="carousel-container">
                 <div class="carousel-track most-selling-grid">
-                    <div class="product-card">
+                    <div class="product-card" data-product-id="13" data-product-name="Popular Product 1" data-product-price="80.00" data-product-image="./images/Popular Item (1).jpg">
                          <img src="./images/Popular Item (1).jpg" alt="Popular Item 1">
                         <div class="card-content">
                             <h3>Popular Product 1</h3>
@@ -340,10 +437,15 @@
                             <div class="product-price">
                                 <span class="current-price">₹80.00</span>
                             </div>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="14" data-product-name="Popular Product 2" data-product-price="150.00" data-product-image="./images/Popular Item (2).jpg">
                          <img src="./images/Popular Item (2).jpg" alt="Popular Item 2">
                         <div class="card-content">
                             <h3>Popular Product 2</h3>
@@ -351,10 +453,15 @@
                             <div class="product-price">
                                 <span class="current-price">₹150.00</span>
                             </div>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="15" data-product-name="Popular Product 3" data-product-price="65.00" data-product-image="./images/Popular Item (3).jpg">
                          <img src="./images/Popular Item (3).jpg" alt="Popular Item 3">
                         <div class="card-content">
                             <h3>Popular Product 3</h3>
@@ -362,10 +469,15 @@
                             <div class="product-price">
                                 <span class="current-price">₹65.00</span>
                             </div>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="16" data-product-name="Popular Product 4" data-product-price="120.00" data-product-image="./images/Popular Item (4).jpg">
                          <img src="./images/Popular Item (4).jpg" alt="Popular Item 4">
                         <div class="card-content">
                             <h3>Popular Product 4</h3>
@@ -373,10 +485,15 @@
                             <div class="product-price">
                                 <span class="current-price">₹120.00</span>
                             </div>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
+                     <div class="product-card" data-product-id="17" data-product-name="Popular Product 5" data-product-price="150.00" data-product-image="./images/Popular Item (5).jpg">
                          <img src="./images/Popular Item (5).jpg" alt="Popular Item 5">
                         <div class="card-content">
                             <h3>Popular Product 5</h3>
@@ -384,29 +501,44 @@
                             <div class="product-price">
                                 <span class="current-price">₹150.00</span>
                             </div>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
-                         <img src="./images/Popular Item (6).jpg" alt="Popular Item 6">
+                     <div class="product-card" data-product-id="18" data-product-name="Popular Product 6" data-product-price="65.00" data-product-image="./images/Popular Item (6).jpg">
+                         <img src="./images/Popular Item  (6).jpg" alt="Popular Item 6">
                         <div class="card-content">
                             <h3>Popular Product 6</h3>
                             <p class="product-description">A household favorite.</p>
                             <div class="product-price">
                                 <span class="current-price">₹65.00</span>
                             </div>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
-                     <div class="product-card">
-                         <img src="./images/Popular Item (7).jpg" alt="Popular Item 7">
+                     <div class="product-card" data-product-id="19" data-product-name="Popular Product 7" data-product-price="120.00" data-product-image="./images/Popular Item (7).jpg">
+                         <img src="./images/Popular Item  (7).jpg" alt="Popular Item 7">
                         <div class="card-content">
                             <h3>Popular Product 7</h3>
                             <p class="product-description">Often purchased together.</p>
                             <div class="product-price">
                                 <span class="current-price">₹120.00</span>
                             </div>
-                            <button class="btn btn-primary btn-small">Add to Cart</button>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
                         </div>
                     </div>
                     </div>
@@ -668,6 +800,48 @@
     <button id="back-to-top-btn" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
+
+    <div class="cart-overlay"></div>
+
+    <div class="cart-sidebar">
+        <div class="sidebar-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="sidebar-body">
+            <div class="cart-empty-message">Your cart is empty.</div>
+             <div class="cart-items-list">
+                 </div>
+        </div>
+        <div class="sidebar-footer">
+            <div class="cart-summary">
+                <p>Total: <span class="cart-total-price">₹0.00</span></p>
+            </div>
+             <button class="btn btn-secondary add-more-items-btn">Add More Item</button>
+             <a href="cart.html" class="btn btn-primary go-to-cart-btn">Go to cart</a>
+             <a href="checkout.html" class="btn btn-primary checkout-btn">Checkout Directly</a>
+        </div>
+    </div>
+
+     <div class="cart-popup">
+        <div class="popup-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart-btn"><i class="fas fa-times"></i></button>
+        </div>
+         <div class="popup-body">
+            <div class="cart-empty-message">Your cart is empty.</div>
+              <div class="cart-items-list">
+                 </div>
+        </div>
+        <div class="popup-footer">
+             <div class="cart-summary">
+                <p>Total: <span class="cart-total-price">₹0.00</span></p>
+            </div>
+             <button class="btn btn-secondary add-more-items-btn">Add More Item</button>
+             <a href="cart.html" class="btn btn-primary go-to-cart-btn">Go to cart</a>
+             <a href="checkout.html" class="btn btn-primary checkout-btn">Checkout Directly</a>
+        </div>
+    </div>
 
 
     <script src="./script.js"></script>

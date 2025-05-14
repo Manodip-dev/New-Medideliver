@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login / Sign Up - MediDeliver</title>
+  <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.min.css" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./log-in_style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body class="login-page-body">
+  <div class="login-container">
+    <a href="index.html" class="back-btn" id="main-back-btn">
+      <i class="fas fa-arrow-left"></i>
+      <span id="back-btn-text">Back to Homepage</span>
+    </a>
+
+    <!-- Login Section -->
+    <div class="login-section active" id="login-section">
+      <div class="login-content">
+        <h1 class="welcome-heading">Welcome Back!</h1>
+        <p class="welcome-text">Log in to your account to continue your seamless medicine delivery experience.</p>
+        <div class="login-form-area">
+          <div class="login-image">
+            <img src="https://placehold.co/400x400/e2e8f0/4a5568?text=Login+Illustration" alt="Login Illustration" />
+          </div>
+          <div class="login-form-wrapper">
+            <h2 class="form-title">Login to Your Account</h2>
+            <form id="login-form">
+              <div class="form-group">
+                <label for="login-email-phone">Email or Phone Number</label>
+                <input type="text" id="login-email-phone" name="email_phone" placeholder="Enter your email or phone" required />
+              </div>
+              <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password" placeholder="Enter your password" required />
+              </div>
+              <button type="submit" class="btn btn-primary login-btn">Login</button>
+            </form>
+            <p class="signup-link-text">Don't have an account? <a href="#" id="show-signup-link">Create now</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Signup Section -->
+    <div class="signup-section hidden" id="signup-section">
+      <div class="signup-content">
+        <h1 class="signup-heading">Get Started with MediDeliver</h1>
+        <p class="signup-text">Create an account to experience fast, reliable, and convenient medicine delivery tailored just for you.</p>
+
+        <div class="step-indicator" id="step-indicator">
+          <div class="step active" data-step="1">
+            <span class="step-number">1</span>
+            <span class="step-name">Personal Info</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="2">
+            <span class="step-number">2</span>
+            <span class="step-name">Contact Details</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="3">
+            <span class="step-number">3</span>
+            <span class="step-name">Verification</span>
+          </div>
+          <div class="step-line"></div>
+          <div class="step" data-step="4">
+            <span class="step-number">4</span>
+            <span class="step-name">Confirmation</span>
+          </div>
+        </div>
+
+        <form id="signup-form">
+          <!-- Step 1 -->
+          <div class="signup-step active" data-step="1">
+            <h3 class="step-title">Tell Us About Yourself</h3>
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" required />
+            </div>
+            <div class="form-group">
+              <label for="last-name">Last Name</label>
+              <input type="text" id="last-name" name="last_name" required />
+            </div>
+            <div class="form-group">
+              <label>Gender</label>
+              <div class="gender-options">
+                <label><input type="radio" name="gender" value="male" required /> Male</label>
+                <label><input type="radio" name="gender" value="female" /> Female</label>
+                <label><input type="radio" name="gender" value="others" /> Others</label>
+              </div>
+            </div>
+            <button type="button" class="btn btn-primary next-step-btn">Next</button>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="signup-step" data-step="2">
+            <h3 class="step-title">How Can We Reach You?</h3>
+            <div class="form-group">
+              <label for="signup-email">Email Address</label>
+              <input type="email" id="signup-email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="signup-phone">Phone Number</label>
+              <input type="tel" id="signup-phone" name="phone" required />
+            </div>
+            <button type="button" class="btn btn-secondary prev-step-btn">Previous</button>
+            <button type="button" class="btn btn-primary next-step-btn">Next</button>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="signup-step" data-step="3">
+            <h3 class="step-title">Verify Your Identity</h3>
+            <div class="form-group">
+              <label>Choose where to receive the OTP:</label>
+              <div class="otp-choice-options">
+                <label><input type="radio" name="otp_method" value="email" required /> <i class="fas fa-envelope"></i> Email</label>
+                <label><input type="radio" name="otp_method" value="phone" /> <i class="fas fa-phone"></i> Phone</label>
+              </div>
+            </div>
+            <p class="verification-text">Enter the OTP sent to your selected method.</p>
+            <div class="form-group">
+              <label for="otp">Enter OTP</label>
+              <input type="text" id="otp" name="otp" placeholder="----" required maxlength="4" inputmode="numeric" pattern="\d{4}" />
+              <div id="otp-verification-status" class="verification-status"></div>
+            </div>
+            <button type="button" class="btn btn-secondary prev-step-btn">Previous</button>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="signup-step confirmation-step" data-step="4">
+            <div class="confirmation-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <h3 class="step-title">Account Created Successfully!</h3>
+            <p class="confirmation-text">You can now log in to your new MediDeliver account.</p>
+            <a href="#" class="btn btn-primary go-to-login-btn">Go to Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="./log-in_script.js"></script>
+</body>
+</html>

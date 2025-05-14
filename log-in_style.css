@@ -1,0 +1,550 @@
+/* Import Lexend variable font (already in style.css, but good to have here for standalone testing) */
+@font-face {
+    font-family: 'Lexend';
+    src: url('./font/Lexend-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Specify the range of weights available */
+    font-display: swap; /* Load font asynchronously */
+}
+
+/* Use variables from the main theme */
+/* Ensure style.css is linked BEFORE login.css in HTML */
+
+/* Body styling specific to the login page */
+.login-page-body {
+    background-color: var(--bg-darker); /* Use a slightly darker background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Ensure it takes at least full viewport height */
+    padding: 20px; /* Add padding around the content */
+    overflow-y: auto; /* Allow scrolling if content exceeds viewport height */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.login-container {
+    background-color: var(--bg-color); /* Use main background color for the container */
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--card-shadow); /* Use card shadow variable */
+    padding: 40px; /* Increased padding */
+    max-width: 900px; /* Max width for the container */
+    width: 100%; /* Ensure it takes full width up to max-width */
+    position: relative; /* Needed for absolute positioning of sections */
+    overflow: hidden; /* Hide overflowing content during transitions */
+    min-height: 600px; /* Give the container a minimum height */
+    display: flex; /* Use flexbox to manage sections */
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    box-sizing: border-box;
+}
+
+/* Unified back button style */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 1rem;
+    color: var(--text-color); /* Use text color variable */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.3s ease;
+    z-index: 10; /* Ensure it's above other content */
+    text-decoration: none; /* Remove underline */
+}
+
+.back-btn:hover {
+    color: var(--link-hover-color); /* Use link hover color variable */
+}
+
+.welcome-heading, .signup-heading {
+    font-size: 2.5rem;
+    color: var(--heading-color); /* Use heading color variable */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.welcome-text, .signup-text {
+    font-size: 1.1rem;
+    color: var(--footer-text-color); /* Use footer text color variable */
+    text-align: center;
+    margin-bottom: 40px; /* Space below intro text */
+}
+
+/* Login Section Styles */
+.login-section, .signup-section {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Initial state for transition */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0s 0.5s;
+    position: absolute; /* Position absolutely within the container */
+    top: 40px; /* Align below back button/padding */
+    left: 0;
+    padding: 0 40px; /* Match container padding */
+    bottom: 40px; /* Space from the bottom */
+    justify-content: center; /* Vertically center content within the section */
+    box-sizing: border-box;
+}
+
+.login-section.hidden {
+    opacity: 0;
+    visibility: hidden;
+    /* Position off-screen to the left */
+    transform: translateX(-100%);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0s 0s; /* Visibility hides instantly */
+}
+
+/* Sign Up section initial hidden state */
+.signup-section.hidden {
+     opacity: 0;
+     visibility: hidden;
+     transform: translateX(100%); /* Start off-screen to the right */
+     transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, visibility 0s 0s;
+}
+
+/* Sign Up section active state */
+.signup-section.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* Slide in */
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+
+.login-form-area {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Space between image and form */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: center; /* Center items when wrapped */
+}
+
+.login-image {
+    flex: 1;
+    min-width: 300px; /* Minimum width for the image column */
+    max-width: 400px; /* Max width for the image */
+    text-align: center;
+}
+
+.login-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--card-shadow); /* Use card shadow variable */
+}
+
+.login-form-wrapper {
+    flex: 1;
+    min-width: 300px; /* Minimum width for the form column */
+    max-width: 400px; /* Max width for the form */
+    background-color: var(--bg-darker); /* Use darker background for form wrapper */
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px var(--card-shadow); /* Use card shadow variable */
+    box-sizing: border-box;
+}
+
+.form-title {
+    font-size: 1.5rem;
+    color: var(--heading-color); /* Use heading color variable */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--text-color); /* Use text color variable */
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border-color); /* Use border color variable */
+    border-radius: 8px;
+    background-color: var(--bg-color); /* Use main background color for inputs */
+    color: var(--text-color); /* Use text color variable */
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]::placeholder,
+.form-group input[type="email"]::placeholder,
+.form-group input[type="password"]::placeholder,
+.form-group input[type="tel"]::placeholder {
+    color: var(--old-price-color); /* Use old price color for placeholders */
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="tel"]:focus {
+    border-color: var(--primary-button-bg); /* Highlight on focus */
+    box-shadow: 0 0 5px rgba(49, 130, 206, 0.3); /* Add a subtle shadow */
+}
+
+/* Error state for input */
+.form-group input.input-error {
+    border-color: var(--danger-color); /* Assuming you have a danger color variable */
+}
+
+
+.login-btn, .submit-signup-btn {
+    width: 100%; /* Full width button */
+    margin-top: 10px;
+}
+
+.signup-link-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: var(--text-color); /* Use text color variable */
+}
+
+.signup-link-text a {
+    color: var(--link-color); /* Use link color variable */
+    font-weight: 500;
+    text-decoration: none; /* Remove default underline */
+    transition: color 0.3s ease;
+}
+
+.signup-link-text a:hover {
+    color: var(--link-hover-color);
+    text-decoration: underline; /* Add underline on hover */
+}
+
+
+/* Sign Up Section Styles */
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    position: relative; /* Needed for absolute positioning of line */
+    padding: 0 20px; /* Add padding to align with content */
+}
+
+.step-indicator::before {
+    content: '';
+    position: absolute;
+    top: 38%; /* Adjust vertical position */
+    left: 20px; /* Start after padding */
+    right: 20px; /* End before padding */
+    border-top: 2px dashed var(--border-color); /* Dashed line */
+    z-index: 1; /* Below the step circles */
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 2; /* Above the dashed line */
+    position: relative;
+    cursor: pointer; /* Indicate clickable */
+}
+
+.step-number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px; /* Slightly larger circle */
+    height: 35px;
+    border-radius: 50%;
+    background-color: var(--bg-color); /* Use background color */
+    border: 2px solid var(--border-color); /* Use border color */
+    color: var(--text-color); /* Use text color */
+    font-weight: 600;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.step.active .step-number {
+    background-color: var(--primary-button-bg); /* Primary color when active */
+    border-color: var(--primary-button-bg);
+    color: var(--primary-button-text); /* White text */
+}
+
+.step-name {
+    font-size: 0.9rem;
+    color: var(--footer-text-color); /* Use footer text color */
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.step.active .step-name {
+    color: var(--heading-color); /* Heading color when active */
+    font-weight: 600;
+}
+
+/* Individual Sign Up Steps */
+.signup-step {
+    /* Initially hidden, will be shown by JS */
+    display: none; /* Use display none to completely hide */
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px; /* Add padding to the step content */
+    background-color: var(--bg-darker); /* Use darker background */
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    /* Animation for step transition */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    max-width: 450px; /* Limit width for steps forms */
+    width: 100%;
+    margin: 0 auto; /* Center the step form */
+    box-sizing: border-box;
+}
+
+.signup-step.active {
+    display: flex; /* Show the active step using flex */
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.signup-step .step-title {
+    font-size: 1.3rem;
+    color: var(--heading-color); /* Use heading color */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.gender-options, .otp-choice-options {
+    display: flex;
+    gap: 20px; /* Space between options */
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.gender-options label, .otp-choice-options label {
+    margin-bottom: 0; /* Reset margin from form-group label */
+    font-weight: normal; /* Override bold */
+    color: var(--text-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.gender-options input[type="radio"], .otp-choice-options input[type="radio"] {
+    margin-right: 0; /* Remove default margin */
+    cursor: pointer;
+    /* Style the radio button itself if needed, or rely on default browser style */
+}
+
+.prev-step-btn {
+    margin-right: 10px; /* Space between prev and next buttons */
+}
+
+/* OTP specific styles */
+#otp {
+    text-align: center; /* Center the OTP text */
+    font-size: 1.5rem; /* Larger font size */
+    letter-spacing: 10px; /* Space out the digits */
+    padding: 15px 10px;
+}
+
+.verification-status {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.verification-status.success {
+    color: var(--checkmark-icon-color); /* Green color for success */
+}
+
+.verification-status.error {
+    color: var(--danger-color); /* Red color for error */
+}
+
+
+/* Confirmation Step Specific Styles */
+.confirmation-step {
+    text-align: center;
+    align-items: center; /* Center items in flex column */
+    padding-top: 40px; /* Add some space at the top */
+}
+
+.confirmation-icon {
+    font-size: 4rem;
+    color: var(--checkmark-icon-color); /* Use checkmark icon color */
+    margin-bottom: 20px;
+    animation: scale-in 0.5s ease-out; /* Simple scale-in animation */
+}
+
+@keyframes scale-in {
+    0% { transform: scale(0.5); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+
+.confirmation-text {
+    font-size: 1.1rem;
+    color: var(--text-color); /* Use text color */
+    margin-bottom: 30px;
+}
+
+.go-to-login-btn {
+    /* Style as a primary button */
+     width: auto; /* Auto width for this button */
+     padding: 12px 25px;
+}
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-container {
+        padding: 20px; /* Reduced padding on smaller screens */
+        min-height: auto; /* Allow height to adjust on smaller screens */
+    }
+
+     .back-btn {
+         top: 10px;
+         left: 10px;
+     }
+
+    .login-section, .signup-section {
+        top: 30px; /* Adjust top position */
+        bottom: 20px; /* Adjust bottom position */
+        padding: 0 20px; /* Reduced horizontal padding */
+    }
+
+
+    .welcome-heading, .signup-heading {
+        font-size: 2rem; /* Reduced font size */
+    }
+
+    .welcome-text, .signup-text {
+        font-size: 1rem; /* Reduced font size */
+        margin-bottom: 30px;
+    }
+
+    .login-form-area {
+        flex-direction: column; /* Stack image and form */
+        gap: 30px;
+    }
+
+    .login-image, .login-form-wrapper {
+        min-width: 100%; /* Full width */
+        max-width: 100%; /* Ensure it doesn't exceed 100% */
+    }
+
+    .login-form-wrapper {
+        padding: 20px; /* Reduced padding */
+    }
+
+    .form-title {
+        font-size: 1.3rem;
+    }
+
+    .form-group {
+        margin-bottom: 15px; /* Reduced margin */
+    }
+
+
+    /* Mobile Step Indicator - Vertical Layout */
+    .step-indicator {
+        flex-direction: column; /* Stack steps vertically */
+        align-items: flex-start; /* Align items to the start */
+        margin-bottom: 30px;
+        padding: 0; /* Remove padding */
+        position: relative; /* Ensure relative positioning for children */
+    }
+
+     .step-indicator::before {
+         /* Hide the horizontal line */
+         display: none;
+     }
+
+    /* Vertical dashed line for mobile step indicator */
+    .step-indicator::after {
+        content: '';
+        position: absolute;
+        top: 20px; /* Start after the first step number */
+        left: 28px; /* Align with the center of the step number circle (adjust if needed) */
+        bottom: 20px; /* End before the last step number */
+        border-left: 2px dashed var(--border-color);
+        z-index: 1; /* Below the step circles */
+    }
+
+    .step {
+        flex-direction: row; /* Arrange number and name horizontally */
+        align-items: center;
+        gap: 10px; /* Space between number and name */
+        margin-bottom: 20px; /* Space between steps */
+        width: 100%; /* Full width */
+        padding-left: 0; /* Remove padding-left from previous vertical line attempt */
+        position: relative; /* Needed for positioning pseudo-elements or icons */
+         z-index: 2; /* Ensure steps are above the vertical line */
+    }
+
+     .step:last-child {
+         margin-bottom: 0; /* No bottom margin for the last step */
+     }
+
+     .step-number {
+         flex-shrink: 0; /* Prevent number from shrinking */
+         width: 30px; /* Slightly smaller number circle on mobile */
+         height: 30px;
+         z-index: 3; /* Ensure number is above line */
+         background-color: var(--bg-color); /* Ensure background covers line */
+     }
+
+     .step-name {
+         text-align: left; /* Align text left */
+     }
+
+     .step-line {
+         display: none; /* Hide the horizontal line */
+     }
+
+
+    .signup-step {
+        padding: 15px; /* Reduced padding */
+        gap: 15px; /* Reduced gap */
+        max-width: 100%; /* Allow full width on smaller screens */
+    }
+
+    .signup-step .step-title {
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+    }
+
+    .gender-options, .otp-choice-options {
+         gap: 10px; /* Reduced gap */
+    }
+
+
+
+    .prev-step-btn {
+        margin-right: 5px; /* Reduced space */
+    }
+
+     .confirmation-icon {
+         font-size: 3rem; /* Reduced icon size */
+     }
+
+     .confirmation-text {
+         font-size: 1rem; /* Reduced text size */
+         margin-bottom: 20px;
+     }
+
+     #otp {
+         letter-spacing: 5px; /* Reduce letter spacing on mobile */
+     }
+}

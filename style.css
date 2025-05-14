@@ -1,0 +1,2446 @@
+/* Import Lexend variable font */
+@font-face {
+    font-family: 'Lexend';
+    src: url('./font/Lexend-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900; /* Specify the range of weights available */
+    font-display: swap; /* Load font asynchronously */
+}
+
+/* CSS Variables for Themes */
+:root {
+    /* Light Theme Colors (Default) */
+    --bg-color: #f7fafc;
+    --bg-darker: #edf2f7;
+    --text-color: #2d3748;
+    --heading-color: #1a202c;
+    --link-color: #3182ce;
+    --link-hover-color: #2b6cb0;
+    --primary-button-bg: #3182ce;
+    --primary-button-text: white;
+    --primary-button-hover-bg: #2b6cb0;
+    --secondary-button-bg: transparent;
+    --secondary-button-text: #4a5568;
+    --secondary-button-border: #4a5568;
+    --secondary-button-hover-bg: #4a5568;
+    --secondary-button-hover-text: white;
+    --icon-color: #3182ce;
+    --card-bg: #ffffff;
+    --card-shadow: rgba(0, 0, 0, 0.1);
+    --price-color: #38a169;
+    --old-price-color: #718096;
+    --discount-badge-bg: #f6ad55;
+    --discount-badge-text: #2d3748;
+    --border-color: #e2e8f0;
+    --footer-bg: #d1d8e0; /* Distinct footer background */
+    --footer-text-color: #4a5568;
+    --footer-link-color: #4a5568;
+    --footer-link-hover-color: #2d3748;
+    --footer-bottom-text: #718096;
+    --social-icon-color: #4a5568;
+    --social-icon-hover-color: #2d3748;
+    --payment-icon-color: #4a5568;
+    --search-box-bg: #e2e8f0;
+    --search-input-color: #2d3748;
+    --search-input-placeholder: #4a5568;
+    --search-button-color: #4a5568;
+    --search-button-hover-color: #2d3748;
+    --cart-count-bg: #e53e3e;
+    --cart-count-text: white;
+    --location-text-color: #4a5568;
+    --location-dropdown-bg: #edf2f7;
+    --location-dropdown-border: #e2e8f0;
+    --location-dropdown-input-bg: #ffffff;
+    --location-dropdown-input-color: #2d3748;
+    --location-dropdown-input-border: #e2e8f0;
+    --location-dropdown-button-bg: #3182ce;
+    --location-dropdown-button-color: white;
+    --location-dropdown-button-hover-bg: #2b6cb0;
+     --faq-question-bg: #ffffff;
+    --faq-question-hover-bg: #edf2f7;
+    --faq-question-text: #4a5568;
+    --faq-answer-text: #4a5568;
+    --checkmark-icon-color: #38a169;
+    --hero-heading-color: #1a202c;
+    --hero-text-color: #4a5568;
+    --hero-image-shadow: rgba(0, 0, 0, 0.15);
+    --hero-overlay: rgba(255, 255, 255, 0.5); /* Light theme overlay */
+    --navbar-height: 0; /* CSS variable for dynamic navbar height */
+    --hero-bg-color: #e2e8f0; /* Solid background color for hero */
+
+    /* Cart UI Colors */
+    --cart-ui-bg: #ffffff;
+    --cart-ui-border: #e2e8f0;
+    --cart-ui-shadow: rgba(0, 0, 0, 0.2);
+    --cart-item-border: #e2e8f0;
+    --cart-item-remove-btn: #e53e3e;
+    --cart-item-remove-btn-hover: #c53030;
+    --quantity-control-border: #ccc;
+    --quantity-btn-bg: #eee;
+    --quantity-btn-hover-bg: #ddd;
+    --quantity-text-color: #2d3748;
+    --cart-total-color: #1a202c;
+    --cart-empty-text: #718096;
+
+     /* Location Modal Colors */
+    --location-modal-bg: #ffffff;
+    --location-modal-border: #e2e8f0;
+    --location-modal-shadow: rgba(0, 0, 0, 0.3);
+    --location-option-bg: #edf2f7;
+    --location-option-hover-bg: #d1d8e0;
+    --location-option-border: #e2e8f0;
+    --location-option-text: #2d3748;
+    --location-option-icon: #3182ce;
+    --manual-input-bg: #ffffff;
+    --manual-input-border: #e2e8f0;
+    --manual-input-color: #2d3748;
+    --manual-input-placeholder: #4a5568;
+    --confirm-button-bg: #38a169;
+    --confirm-button-hover-bg: #2f855a;
+    --confirm-button-text: white;
+
+}
+
+body.dark-theme {
+    /* Dark Theme Colors */
+    --bg-color: #1a202c;
+    --bg-darker: #2d3748;
+    --text-color: #e2e8f0;
+    --heading-color: #a0aec0;
+    --link-color: #63b3ed;
+    --link-hover-color: #90cdf4;
+    --primary-button-bg: #63b3ed;
+    --primary-button-text: #1a202c;
+    --primary-button-hover-bg: #90cdf4;
+    --secondary-button-bg: transparent;
+    --secondary-button-text: #a0aec0;
+    --secondary-button-border: #a0aec0;
+    --secondary-button-hover-bg: #a0aec0;
+    --secondary-button-hover-text: #1a202c;
+    --icon-color: #63b3ed;
+    --card-bg: #1a202c;
+    --card-shadow: rgba(0, 0, 0, 0.2);
+    --price-color: #68d391;
+    --old-price-color: #718096;
+    --discount-badge-bg: #f6e05e;
+    --discount-badge-text: #2d3748;
+    --border-color: #4a5568;
+    --footer-bg: #1a202c; /* Distinct footer background */
+    --footer-text-color: #a0aec0;
+    --footer-link-color: #a0aec0;
+    --footer-link-hover-color: #e2e8f0;
+    --footer-bottom-text: #718096;
+    --social-icon-color: #a0aec0;
+    --social-icon-hover-color: #e2e8f0;
+    --payment-icon-color: #a0aec0;
+    --search-box-bg: #4a5568;
+    --search-input-color: #e2e8f0;
+    --search-input-placeholder: #a0aec0;
+    --search-button-color: #e2e8f0;
+    --search-button-hover-color: #a0aec0;
+    --cart-count-bg: #f56565;
+    --cart-count-text: white;
+    --location-text-color: #a0aec0;
+    --location-dropdown-bg: #2d3748;
+    --location-dropdown-border: #4a5568;
+    --location-dropdown-input-bg: #1a202c;
+    --location-dropdown-input-color: #e2e8f0;
+    --location-dropdown-input-border: #4a5568;
+    --location-dropdown-button-bg: #63b3ed;
+    --location-dropdown-button-color: #1a202c;
+    --location-dropdown-button-hover-bg: #90cdf4;
+    --faq-question-bg: #1a202c;
+    --faq-question-hover-bg: #2d3748;
+    --faq-question-text: #a0aec0;
+    --faq-answer-text: #a0aec0;
+    --checkmark-icon-color: #68d391;
+    --hero-heading-color: #e2e8f0;
+    --hero-text-color: #a0aec0;
+    --hero-image-shadow: rgba(0, 0, 0, 0.3);
+    --hero-overlay: rgba(0, 0, 0, 0.5); /* Dark theme overlay */
+     --hero-bg-color: #2d3748; /* Solid background color for hero in dark mode */
+
+     /* Cart UI Colors (Dark Theme) */
+    --cart-ui-bg: #2d3748;
+    --cart-ui-border: #4a5568;
+    --cart-ui-shadow: rgba(0, 0, 0, 0.4);
+    --cart-item-border: #4a5568;
+    --cart-item-remove-btn: #f56565;
+    --cart-item-remove-btn-hover: #e53e3e;
+    --quantity-control-border: #a0aec0;
+    --quantity-btn-bg: #4a5568;
+    --quantity-btn-hover-bg: #5a6578;
+    --quantity-text-color: #e2e8f0;
+    --cart-total-color: #e2e8f0;
+    --cart-empty-text: #a0aec0;
+
+    /* Location Modal Colors (Dark Theme) */
+    --location-modal-bg: #2d3748;
+    --location-modal-border: #4a5568;
+    --location-modal-shadow: rgba(0, 0, 0, 0.4);
+    --location-option-bg: #4a5568;
+    --location-option-hover-bg: #5a6578;
+    --location-option-border: #4a5568;
+    --location-option-text: #e2e8f0;
+    --location-option-icon: #90cdf4;
+    --manual-input-bg: #1a202c;
+    --manual-input-border: #4a5568;
+    --manual-input-color: #e2e8f0;
+    --manual-input-placeholder: #a0aec0;
+    --confirm-button-bg: #68d391;
+    --confirm-button-hover-bg: #5ac18e;
+    --confirm-button-text: #1a202c;
+
+}
+
+
+/* Custom Scrollbar Styles (for Webkit browsers like Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker); /* Color of the track */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color); /* Color of the scrollbar thumb */
+  border-radius: 10px;
+  border: 3px solid var(--bg-darker); /* Add space around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--footer-link-hover-color); /* Color when hovering over the thumb */
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+
+/* Basic Reset and Body Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend', sans-serif;
+    line-height: 1.6;
+    background-color: var(--bg-color); /* Use CSS variable */
+    color: var(--text-color); /* Use CSS variable */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth theme transition */
+    /* Padding will be applied via media query below */
+    padding-top: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.bg-darker {
+    background-color: var(--bg-darker); /* Use CSS variable */
+}
+
+h1, h2, h3 {
+    color: var(--heading-color); /* Use CSS variable */
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+a {
+    color: var(--link-color); /* Use CSS variable */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--link-hover-color); /* Use CSS variable */
+}
+
+ul {
+    list-style: none;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.1s ease; /* Added transform for active effect */
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-family: 'Lexend', sans-serif; /* Ensure Lexend font on buttons */
+}
+
+.btn:active {
+    transform: scale(0.98); /* Simple press animation */
+}
+
+
+.btn-primary {
+    background-color: var(--primary-button-bg); /* Use CSS variable */
+    color: var(--primary-button-text); /* Use CSS variable */
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-button-hover-bg); /* Use CSS variable */
+}
+
+.btn-secondary {
+    background-color: var(--secondary-button-bg); /* Use CSS variable */
+    color: var(--secondary-button-text); /* Use CSS variable */
+    border: 2px solid var(--secondary-button-border); /* Use CSS variable */
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-button-hover-bg); /* Use CSS variable */
+    color: var(--secondary-button-hover-text); /* Use CSS variable */
+    border-color: var(--secondary-button-hover-bg); /* Match border color */
+}
+
+.btn-icon {
+    background-color: transparent;
+    color: var(--text-color); /* Use CSS variable */
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 1.2rem; /* Adjusted default icon size */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-icon:hover {
+    color: var(--heading-color); /* Use CSS variable */
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+.btn-icon .btn-text {
+    font-size: 1rem; /* Text size for icons */
+    font-weight: 500;
+    /* Ensure text alignment is consistent */
+    line-height: 1; /* Align text vertically */
+    font-family: 'Lexend', sans-serif; /* Ensure Lexend font on utility text */
+    color: var(--text-color); /* Ensure consistent text color */
+    transition: color 0.3s ease; /* Add color transition for hover */
+}
+
+.btn-icon:hover .btn-text {
+     color: var(--heading-color); /* Match icon hover color */
+}
+
+
+.btn-small {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+}
+
+.theme-toggle-btn {
+    transition: color 0.3s ease;
+}
+
+.theme-toggle-btn i {
+    font-size: 1.3rem; /* Ensure theme icon is a good size */
+}
+
+
+/* Navbar */
+.navbar {
+    background-color: var(--bg-darker); /* Use CSS variable */
+    padding: 15px 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* Hide overflowing content when collapsed */
+    transition: height 0.3s ease-in-out, padding 0.3s ease-in-out; /* Smooth height transition */
+    position: static; /* Default position for mobile */
+}
+
+.navbar .container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically by default */
+    align-items: center;
+}
+
+/* Desktop Navbar Styles */
+.navbar-desktop {
+    display: none; /* Hidden by default, shown on desktop */
+    width: 100%;
+}
+
+.navbar-desktop-full {
+    display: flex; /* Always shown on desktop initially */
+    flex-direction: column;
+    width: 100%;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.navbar-desktop-collapsed {
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    height: 60px; /* Define height for collapsed state */
+     padding: 0 20px; /* Padding for collapsed state */
+}
+
+/* State when navbar is collapsed on desktop */
+.navbar.collapsed .navbar-desktop-full {
+    opacity: 0;
+    visibility: hidden;
+    display: none; /* Hide full version */
+}
+
+.navbar.collapsed .navbar-desktop-collapsed {
+    opacity: 1;
+    visibility: visible;
+    display: flex; /* Show collapsed version */
+}
+
+
+.navbar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px; /* Space between rows on desktop */
+}
+
+.navbar-bottom {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    /* max-height will be controlled by JS and CSS variable */
+    overflow: hidden;
+    /* No transition needed as it's always visible in the full desktop navbar */
+}
+
+.navbar-brand-location {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align items to the start */
+    margin-right: 20px; /* Space after this block */
+}
+
+.navbar-brand {
+    margin-bottom: 5px; /* Space below brand in the block */
+}
+
+.site-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.navbar-location {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--location-text-color); /* Use CSS variable */
+    cursor: pointer;
+    position: relative; /* For dropdown positioning */
+    font-size: 0.9rem; /* Adjusted location text size */
+}
+
+.navbar-location .location-text {
+    display: inline; /* Show location text on desktop */
+}
+
+.location-dropdown-icon {
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.navbar-location.active .location-dropdown-icon {
+    transform: rotate(180deg);
+}
+
+.location-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--location-dropdown-bg); /* Use CSS variable */
+    border: 1px solid var(--location-dropdown-border); /* Use CSS variable */
+    border-radius: 8px;
+    padding: 15px;
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 10px;
+    z-index: 10;
+    min-width: 200px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-location.active .location-dropdown {
+    display: flex; /* Show when active */
+}
+
+.location-dropdown input {
+    padding: 8px;
+    border: 1px solid var(--location-dropdown-input-border); /* Use CSS variable */
+    border-radius: 4px;
+    background-color: var(--location-dropdown-input-bg); /* Use CSS variable */
+    color: var(--location-dropdown-input-color); /* Use CSS variable */
+    font-size: 0.9rem; /* Adjusted input size */
+}
+
+.location-dropdown input::placeholder {
+    color: var(--search-input-placeholder);
+}
+
+.location-dropdown button {
+    padding: 8px;
+    background-color: var(--primary-button-bg); /* Use CSS variable */
+    color: var(--primary-button-text); /* Use CSS variable */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.location-dropdown button:hover {
+    background-color: var(--primary-button-hover-bg); /* Use CSS variable */
+}
+
+
+.navbar-nav-top ul {
+    display: flex;
+    gap: 25px;
+}
+
+.navbar-nav-top a {
+    color: var(--text-color); /* Use CSS variable */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav-top a:hover {
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+
+.search-box {
+    display: flex;
+    align-items: center;
+    background-color: var(--search-box-bg); /* Use CSS variable */
+    border-radius: 8px;
+    overflow: hidden;
+    width: 400px; /* Search bar width */
+    margin-right: auto; /* Push utility items to the right */
+}
+
+.search-input {
+    border: none;
+    padding: 12px 15px; /* Increased padding for better design */
+    background: none;
+    color: var(--search-input-color); /* Use CSS variable */
+    outline: none;
+    width: calc(100% - 40px); /* Adjust based on button width */
+    font-family: 'Lexend', sans-serif; /* Apply Lexend font */
+    font-size: 1rem; /* Adjusted input size */
+}
+
+.search-input::placeholder {
+    color: var(--search-input-placeholder);
+}
+
+.search-button {
+    background-color: transparent;
+    border: none;
+    padding: 12px; /* Increased padding */
+    cursor: pointer;
+    color: var(--search-button-color); /* Use CSS variable */
+    transition: color 0.3s ease;
+    font-size: 1.1rem; /* Adjusted search icon size */
+}
+
+.search-button:hover {
+    color: var(--search-button-hover-color);
+}
+
+.navbar-utility-bottom {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between utility items */
+}
+
+.cart-btn {
+    position: relative;
+}
+
+.cart-btn i {
+    font-size: 1.3rem; /* Adjusted cart icon size */
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px; /* Adjusted position */
+    right: -8px; /* Adjusted position */
+    background-color: var(--cart-count-bg); /* Use CSS variable */
+    color: var(--cart-count-text); /* Use CSS variable */
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 50%; /* Make it round */
+    padding: 2px 5px; /* Adjusted padding */
+    min-width: 18px; /* Ensure minimum size for circular shape */
+    height: 18px; /* Ensure height matches min-width */
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-align: center;
+}
+
+
+/* Collapsed Desktop Navbar Styles */
+.navbar-desktop-collapsed {
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+    height: 60px; /* Define height for collapsed state */
+    padding: 0 20px; /* Padding for collapsed state */
+}
+
+.navbar-brand-search {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-brand-collapsed .site-logo {
+     font-size: 1.5rem; /* Slightly smaller logo in collapsed state */
+}
+
+.search-box-collapsed {
+    display: flex;
+    align-items: center;
+    background-color: var(--search-box-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px; /* Smaller search bar in collapsed state */
+     /* Transition for width */
+    transition: width 0.3s ease-in-out;
+}
+
+.search-box-collapsed input {
+    border: none;
+    padding: 8px 10px; /* Smaller padding */
+    background: none;
+    color: var(--search-input-color);
+    outline: none;
+    width: calc(100% - 30px); /* Adjust based on button width */
+    font-family: 'Lexend', sans-serif;
+    font-size: 0.9rem;
+}
+
+.search-box-collapsed input::placeholder {
+    color: var(--search-input-placeholder);
+}
+
+.search-box-collapsed button {
+    background-color: transparent;
+    border: none;
+    padding: 8px; /* Smaller padding */
+    cursor: pointer;
+    color: var(--search-button-color);
+    transition: color 0.3s ease;
+    font-size: 1rem; /* Adjusted collapsed search icon size */
+}
+
+.search-box-collapsed button:hover {
+    color: var(--search-button-hover-color);
+}
+
+.navbar-essential-desktop-collapsed {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Smaller gap between utility items */
+}
+
+/* Collapsed desktop utility icons - hide text */
+.navbar-essential-desktop-collapsed .btn-icon .btn-text {
+    display: none;
+}
+
+/* Collapsed desktop utility icons - adjust size */
+.navbar-essential-desktop-collapsed .btn-icon i {
+     font-size: 1.2rem;
+}
+
+
+/* Mobile Navbar Styles */
+.navbar-mobile {
+    display: none; /* Hidden by default, shown on mobile */
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.navbar-top-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: nowrap; /* Prevent wrapping in the top row */
+}
+
+.navbar-brand-mobile .site-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.navbar-toggler {
+    display: block; /* Show hamburger menu on mobile */
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.5rem; /* Adjusted mobile toggler size */
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Smooth rotation transition */
+}
+
+.navbar-toggler.active i {
+    transform: rotate(90deg); /* Rotate icon when active */
+}
+
+.search-box-mobile {
+    display: flex; /* Show search box on mobile */
+    align-items: center;
+    background-color: var(--search-box-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%; /* Full width */
+}
+
+.search-box-mobile input {
+    border: none;
+    padding: 10px 15px;
+    background: none;
+    color: var(--search-input-color);
+    outline: none;
+    width: calc(100% - 40px);
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+}
+
+.search-box-mobile input::placeholder {
+    color: var(--search-input-placeholder);
+}
+
+.search-box-mobile button {
+    background-color: transparent;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--search-button-color);
+    transition: color 0.3s ease;
+    font-size: 1.1rem; /* Adjusted mobile search icon size */
+}
+
+.search-box-mobile button:hover {
+    color: var(--search-button-hover-color);
+}
+
+.navbar-utility-mobile {
+    display: flex; /* Show utility icons on mobile */
+    align-items: center;
+    gap: 10px; /* Space between icons */
+    justify-content: flex-end; /* Align to the right */
+    width: 100%;
+}
+
+/* Mobile utility icons size - hide text */
+.navbar-utility-mobile .btn-icon .btn-text {
+    display: none;
+}
+
+.navbar-utility-mobile .btn-icon i {
+    font-size: 1.3rem; /* Ensure appropriate size */
+}
+
+/* Show mobile location field and hide the icon */
+ .mobile-location-icon {
+     display: none;
+ }
+
+ .mobile-location-field {
+     display: flex; /* Show on mobile */
+ }
+
+
+.navbar-mobile-menu {
+    overflow: hidden; /* Hide when collapsed */
+    max-height: 0; /* Start collapsed */
+    transition: max-height 0.3s ease-in-out; /* Smooth collapse/expand */
+    width: 100%;
+    background-color: var(--bg-darker); /* Match navbar background */
+    padding: 0 20px; /* Add padding */
+}
+
+.navbar-mobile-menu.active {
+    max-height: 300px; /* Adjust as needed based on content */
+    padding: 10px 20px; /* Add padding when expanded */
+}
+
+.navbar-nav-mobile ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 0; /* Add padding inside the menu */
+}
+
+.navbar-nav-mobile a {
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: block; /* Make links block for better tapping */
+    padding: 5px 0; /* Add padding for tapping */
+}
+
+.navbar-nav-mobile a:hover {
+    color: var(--heading-color);
+}
+
+/* Remove mobile location selection styles */
+.mobile-location-selection {
+    display: none;
+}
+
+
+/* Hero Section */
+.hero-section {
+    /* Use a solid background color variable */
+    background-color: var(--hero-bg-color);
+    /* Remove background image and overlay */
+    background-image: none;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    color: var(--text-color); /* Use CSS variable */
+    padding: 100px 0;
+    text-align: center;
+}
+
+
+.hero-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--hero-heading-color); /* Use CSS variable */
+     /* Responsive font size for hero heading */
+     transition: font-size 0.3s ease;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: var(--hero-text-color); /* Use CSS variable */
+}
+
+.hero-actions {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hero-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px var(--hero-image-shadow); /* Use CSS variable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
+}
+
+.hero-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 25px var(--hero-image-shadow);
+}
+
+
+/* Categories Section */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+    gap: 20px;
+}
+
+.category-box {
+    background-color: var(--bg-darker); /* Use CSS variable */
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    color: var(--text-color); /* Use CSS variable */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.category-box:hover {
+    background-color: var(--border-color); /* Use CSS variable */
+    transform: translateY(-5px);
+}
+
+.category-icon {
+    font-size: 2.5rem;
+    color: var(--icon-color); /* Use CSS variable */
+    margin-bottom: 10px;
+}
+
+.category-box h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: var(--text-color); /* Use CSS variable */
+}
+
+
+/* Featured Products / Most Selling Sections - Carousel Styles */
+.carousel-container {
+    position: relative;
+    overflow: hidden; /* Hide items outside the view */
+    padding: 0 40px; /* Add padding for arrows */
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Smooth sliding animation */
+    touch-action: pan-y; /* Enable vertical pan, disable horizontal pan by default */
+}
+
+.product-card {
+    /* Individual card styles (reused from previous version) */
+    background-color: var(--card-bg); /* Use CSS variable */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px var(--card-shadow); /* Use CSS variable */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
+    /* min-width adjusted in media queries for responsiveness */
+    margin: 0 15px; /* Space between cards */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+}
+
+/* Adjust margin for first and last items within the track */
+.carousel-track .product-card:first-child {
+    margin-left: 0;
+}
+
+.carousel-track .product-card:last-child {
+    margin-right: 0;
+}
+
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px; /* Fixed height for images */
+    object-fit: cover; /* Cover the area without distortion */
+    border-top-left-radius: 8px; /* Rounded top corners */
+    border-top-right-radius: 8px;
+    transition: transform 0.3s ease; /* Image hover animation */
+}
+
+.product-card:hover img {
+     transform: scale(1.05);
+}
+
+
+.card-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow content to take available space */
+}
+
+.product-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: var(--footer-text-color); /* Use CSS variable */
+    margin-bottom: 15px;
+    flex-grow: 1; /* Allow description to take space */
+}
+
+.product-price {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.current-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--price-color); /* Use CSS variable */
+}
+
+.old-price {
+    font-size: 0.9rem;
+    color: var(--old-price-color); /* Use CSS variable */
+    text-decoration: line-through;
+}
+
+.discount-badge {
+    background-color: var(--discount-badge-bg); /* Use CSS variable */
+    color: var(--discount-badge-text); /* Use CSS variable */
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    align-self: flex-start; /* Align badge to the start */
+}
+
+.product-card .btn {
+    align-self: flex-start; /* Align button to the start */
+}
+
+/* Quantity Control on Product Cards */
+.quantity-control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--quantity-control-border);
+    border-radius: 8px;
+    padding: 5px;
+    width: fit-content; /* Adjust width based on content */
+     /* Transition for showing/hiding */
+     opacity: 1;
+     visibility: visible;
+     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.quantity-control.hidden {
+     opacity: 0;
+     visibility: hidden;
+     transition: opacity 0.3s ease-in-out, visibility 0s 0.3s; /* Delayed visibility hide */
+}
+
+
+.quantity-btn {
+    background-color: var(--quantity-btn-bg);
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-color);
+    transition: background-color 0.3s ease;
+}
+
+.quantity-btn:hover {
+    background-color: var(--quantity-btn-hover-bg);
+}
+
+.quantity {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--quantity-text-color);
+    min-width: 20px; /* Ensure space for number */
+    text-align: center;
+}
+
+
+/* Carousel Arrows */
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white;
+    border: none;
+    padding: 15px 10px;
+    cursor: pointer;
+    z-index: 5; /* Above the cards */
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.carousel-arrow.left {
+    left: 0;
+}
+
+.carousel-arrow.right {
+    right: 0;
+}
+
+/* Carousel Dots */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 10px;
+    padding: 0 10px; /* Add padding to prevent dots from being cut */
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--border-color); /* Use CSS variable */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--icon-color); /* Use CSS variable */
+    transform: scale(1.2);
+}
+
+
+/* Features Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 30px;
+}
+
+.feature-item {
+    background-color: var(--card-bg); /* Use CSS variable */
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 5px 15px var(--card-shadow); /* Use CSS variable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack icon and text by default */
+    align-items: center;
+    gap: 15px; /* Space between icon and text */
+}
+
+.feature-item:hover {
+     transform: translateY(-5px);
+    box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+
+.feature-icon {
+    font-size: 3rem;
+    color: var(--icon-color); /* Use CSS variable */
+    /* margin-bottom handled by gap in flexbox */
+}
+
+.feature-item h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.feature-item p {
+    color: var(--footer-text-color); /* Use CSS variable */
+}
+
+.feature-text {
+     text-align: center; /* Center text by default */
+}
+
+
+/* Why Choose Us Section */
+.why-choose-us-section .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute space */
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.why-choose-us-content {
+    flex: 1;
+    min-width: 300px;
+}
+
+.why-choose-us-content h2 {
+    text-align: left;
+}
+
+.why-choose-us-content p {
+    margin-bottom: 20px;
+    color: var(--footer-text-color); /* Use CSS variable */
+}
+
+.why-choose-us-content ul {
+    margin-bottom: 30px;
+}
+
+.why-choose-us-content ul li {
+    margin-bottom: 10px;
+    color: var(--text-color); /* Use CSS variable */
+}
+
+.why-choose-us-content ul li i {
+    color: var(--checkmark-icon-color); /* Use CSS variable */
+    margin-right: 10px;
+}
+
+.why-choose-us-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+}
+
+.why-choose-us-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px var(--hero-image-shadow); /* Use CSS variable */
+     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover animation */
+}
+
+.why-choose-us-image img:hover {
+    transform: scale(1.03);
+    box-shadow: 0 15px 25px var(--hero-image-shadow);
+}
+
+
+/* FAQ Section */
+.faq-items {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    background-color: var(--faq-question-bg); /* Use CSS variable */
+    border-radius: 8px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.faq-question {
+    padding: 20px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--faq-question-text); /* Use CSS variable */
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--faq-question-hover-bg); /* Use CSS variable */
+}
+
+.faq-question h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--faq-question-text); /* Use CSS variable */
+    flex-grow: 1; /* Allow text to take space */
+    margin-right: 10px; /* Space between text and icon */
+}
+
+.faq-question i {
+    transition: transform 0.3s ease; /* Smooth rotation transition */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.faq-answer {
+    padding: 0 20px 20px 20px;
+    color: var(--faq-answer-text); /* Use CSS variable */
+    display: none; /* Hidden by default */
+    /* Transition for max-height is handled in JS */
+}
+
+.faq-item.active .faq-answer {
+    display: block; /* Show when active */
+}
+
+.faq-item.active .faq-question i {
+    transform: rotate(45deg); /* Rotate plus to form a cross */
+}
+
+
+/* Footer */
+.footer {
+    background-color: var(--footer-bg); /* Use distinct footer background color */
+    color: var(--footer-text-color); /* Use CSS variable */
+    padding: 60px 0 20px 0;
+}
+
+.footer-grid {
+    display: grid;
+    /* Use explicit column definition for desktop 6-column layout */
+    grid-template-columns: repeat(6, 1fr);
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-col h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--heading-color); /* Use CSS variable */
+}
+
+.footer-col ul {
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: var(--footer-link-color); /* Use CSS variable */
+    transition: color 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+    color: var(--footer-link-hover-color); /* Use CSS variable */
+}
+
+.footer .site-logo {
+     margin-bottom: 15px;
+     display: inline-block; /* To apply margin-bottom */
+}
+
+.footer-col p {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    margin-right: 15px;
+    color: var(--social-icon-color); /* Use CSS variable */
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: var(--social-icon-hover-color); /* Use CSS variable */
+}
+
+.newsletter-form {
+    display: flex;
+    margin-top: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: var(--bg-color); /* Use CSS variable */
+    border: 1px solid var(--border-color); /* Use CSS variable */
+}
+
+.newsletter-form input {
+    border: none;
+    padding: 12px 15px;
+    background: none;
+    color: var(--text-color); /* Use CSS variable */
+    outline: none;
+    flex-grow: 1;
+}
+
+.newsletter-form input::placeholder {
+    color: var(--old-price-color); /* Use CSS variable */
+}
+
+.newsletter-form button {
+    background-color: var(--primary-button-bg); /* Use CSS variable */
+    border: none;
+    padding: 12px 20px;
+    cursor: pointer;
+    color: var(--primary-button-text); /* Use CSS variable */
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: var(--primary-button-hover-bg); /* Use CSS variable */
+}
+
+.payment-icons {
+    margin-top: 20px;
+    font-size: 2rem;
+    display: flex;
+    gap: 15px;
+    color: var(--payment-icon-color); /* Use CSS variable */
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color); /* Use CSS variable */
+    font-size: 0.9rem;
+    color: var(--footer-bottom-text); /* Use CSS variable */
+}
+
+/* Footer Collapse/Expand Styles (Mobile) */
+.footer-col-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 15px; /* Space below header */
+}
+
+.footer-toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.footer-col.active .footer-toggle-icon {
+    transform: rotate(45deg);
+}
+
+.footer-col-content {
+    /* Default state: visible on desktop */
+    max-height: none;
+    overflow: visible;
+    transition: none;
+}
+
+/* Hide footer toggle icon on desktop */
+.footer-toggle-icon {
+    display: none;
+}
+
+
+/* Back to Top Button */
+#back-to-top-btn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999; /* Above most other content */
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary-button-bg); /* Use primary button color */
+    color: var(--primary-button-text); /* Use primary button text color */
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.1s ease; /* Added transform */
+    opacity: 0;
+    visibility: hidden;
+}
+
+#back-to-top-btn.show {
+    display: flex; /* Show when active */
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    visibility: visible;
+}
+
+#back-to-top-btn:hover {
+    background-color: var(--primary-button-hover-bg); /* Darken on hover */
+}
+
+#back-to-top-btn:active {
+    transform: scale(0.9); /* Simple press animation */
+}
+
+
+/* Cart Sidebar/Popup Styles */
+.cart-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1001; /* Above navbar */
+    display: none; /* Hidden by default */
+     /* Animation for fading in/out */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.cart-overlay.show {
+     display: block; /* Show the overlay */
+     opacity: 1;
+     visibility: visible;
+     transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Desktop Sidebar */
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 350px; /* Sidebar width */
+    height: 100%;
+    background-color: var(--cart-ui-bg); /* Use CSS variable */
+    box-shadow: -5px 0 15px var(--cart-ui-shadow); /* Shadow on the left */
+    z-index: 1002; /* Above overlay */
+    display: flex;
+    flex-direction: column;
+    /* Initially hidden off-screen */
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.cart-sidebar.show {
+    transform: translateX(0); /* Slide in */
+}
+
+/* Mobile/Tablet Popup */
+.cart-popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Popup width */
+    max-width: 400px; /* Max width for popup */
+    background-color: var(--cart-ui-bg); /* Use CSS variable */
+    box-shadow: 0 5px 15px var(--cart-ui-shadow);
+    z-index: 1002; /* Above overlay */
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    /* Initially hidden */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+
+    /* Added for scrollbar and button visibility on mobile */
+    max-height: 90vh; /* Limit height to 90% of viewport height */
+    height: auto; /* Allow height to be determined by content up to max-height */
+}
+
+.cart-popup.show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+/* Cart UI Header */
+.sidebar-header, .popup-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--cart-ui-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-shrink: 0; /* Prevent header from shrinking */
+}
+
+.sidebar-header h3, .popup-header h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: var(--heading-color);
+}
+
+.close-cart-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-cart-btn:hover {
+    color: var(--primary-button-bg);
+}
+
+/* Cart UI Body (Item List) */
+.sidebar-body, .popup-body {
+    flex-grow: 1; /* Take available space */
+    padding: 20px;
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    -webkit-overflow-scrolling: touch; /* Improve scrolling performance on iOS */
+}
+
+.cart-empty-message {
+    text-align: center;
+    color: var(--cart-empty-text);
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+.cart-items-list .cart-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--cart-item-border);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.cart-items-list .cart-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.cart-item img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+    flex-shrink: 0; /* Prevent image from shrinking */
+}
+
+.cart-item-details {
+    flex-grow: 1; /* Allow details to take space */
+}
+
+.cart-item-details h4 {
+    font-size: 1rem;
+    margin: 0 0 5px 0;
+    color: var(--heading-color);
+}
+
+.cart-item-details p {
+    font-size: 0.9rem;
+    color: var(--footer-text-color);
+    margin: 0;
+}
+
+.cart-item-price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--price-color);
+    margin-top: 5px;
+}
+
+.cart-item-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    flex-shrink: 0; /* Prevent actions from shrinking */
+}
+
+.cart-item-remove {
+    background: none;
+    border: none;
+    color: var(--cart-item-remove-btn);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cart-item-remove:hover {
+    color: var(--cart-item-remove-btn-hover);
+}
+
+.cart-item-quantity-control {
+     display: flex;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid var(--quantity-control-border);
+    border-radius: 4px;
+    padding: 3px;
+}
+
+.cart-item-quantity-control .quantity-btn {
+     padding: 3px 8px; /* Smaller padding for item quantity control */
+     font-size: 0.9rem;
+}
+
+.cart-item-quantity-control .quantity {
+    font-size: 1rem;
+    min-width: 15px; /* Smaller width for item quantity number */
+}
+
+
+/* Cart UI Footer */
+.sidebar-footer, .popup-footer {
+    padding: 20px;
+    border-top: 1px solid var(--cart-ui-border);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-shrink: 0; /* Prevent footer from shrinking */
+}
+
+.cart-summary {
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--cart-total-color);
+}
+
+.cart-summary span {
+    font-weight: 700;
+    color: var(--price-color);
+}
+
+.sidebar-footer .btn, .popup-footer .btn {
+    width: 100%; /* Full width buttons */
+}
+
+/* Ensure buttons have appropriate margin */
+.sidebar-footer .go-to-cart-btn,
+.popup-footer .go-to-cart-btn {
+    margin-top: 0;
+}
+
+
+/* Hide desktop sidebar and show mobile popup by default */
+.cart-sidebar, .cart-popup {
+    display: none;
+}
+
+/* Location Modal Styles */
+.location-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    z-index: 1001; /* Above navbar and other content */
+    display: none; /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.location-overlay.show {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.location-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; /* Default width */
+    max-width: 450px; /* Max width for larger screens */
+    background-color: var(--location-modal-bg); /* Use CSS variable */
+    box-shadow: 0 5px 15px var(--location-modal-shadow); /* Use CSS variable */
+    z-index: 1002; /* Above overlay */
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    /* Initially hidden */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out, visibility 0s 0.3s;
+}
+
+.location-modal.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1); /* Ensure scale is 1 when shown */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* Optional: Add a slight scale animation on opening */
+.location-modal:not(.show) {
+     transform: translate(-50%, -50%) scale(0.95);
+}
+
+
+.modal-header {
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--location-modal-border); /* Use CSS variable */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--heading-color);
+}
+
+.close-location-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-location-btn:hover {
+    color: var(--primary-button-bg);
+}
+
+.modal-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.location-option {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid var(--location-option-border); /* Use CSS variable */
+    border-radius: 8px;
+    background-color: var(--location-option-bg); /* Use CSS variable */
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+    color: var(--location-option-text); /* Use CSS variable */
+}
+
+.location-option:hover {
+    background-color: var(--location-option-hover-bg); /* Use CSS variable */
+    border-color: var(--icon-color); /* Highlight on hover */
+}
+
+.location-option i {
+    font-size: 1.8rem;
+    color: var(--location-option-icon); /* Use CSS variable */
+    flex-shrink: 0;
+}
+
+.location-option span {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.manual-location-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 10px; /* Space above input field */
+    /* Hidden by default, managed by JS */
+}
+
+.manual-location-input input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1px solid var(--manual-input-border); /* Use CSS variable */
+    border-radius: 8px;
+    background-color: var(--manual-input-bg); /* Use CSS variable */
+    color: var(--manual-input-color); /* Use CSS variable */
+    outline: none;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+}
+
+.manual-location-input input::placeholder {
+    color: var(--manual-input-placeholder);
+}
+
+.manual-location-input .btn {
+    flex-shrink: 0;
+    padding: 10px 15px; /* Adjusted padding */
+    font-size: 0.9rem; /* Adjusted font size */
+     background-color: var(--confirm-button-bg); /* Use specific confirm button style */
+     color: var(--confirm-button-text);
+     transition: background-color 0.3s ease;
+}
+
+.manual-location-input .btn:hover {
+     background-color: var(--confirm-button-hover-bg);
+}
+
+
+.modal-footer {
+    padding: 15px 20px;
+    border-top: 1px solid var(--location-modal-border); /* Use CSS variable */
+    display: flex;
+    justify-content: flex-end; /* Align content to the right */
+}
+
+/*
+.modal-footer .btn {
+     Style footer button if needed
+}
+*/
+
+/* Utility class to hide elements */
+.hidden {
+    display: none !important;
+}
+
+/* Message box for search validation */
+.message-box {
+    position: fixed;
+    bottom: 80px; /* Above the back-to-top button */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    font-family: 'Lexend', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+}
+.message-box.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Optional: add error styling for location input */
+.manual-location-input input.input-error {
+    border-color: #e53e3e !important;
+}
+
+
+/* Responsive Design */
+@media (min-width: 1025px) {
+    /* Desktop Styles */
+    .navbar {
+        position: fixed; /* Navbar is fixed on desktop */
+        top: 0;
+        left: 0;
+    }
+
+     /* Apply padding to body for fixed desktop navbar */
+    body {
+        /* Match the height of the full desktop navbar */
+        padding-top: 110px; /* Adjust this value based on the actual height of your full desktop navbar */
+    }
+
+     /* Adjust padding when the navbar is collapsed */
+    .navbar.collapsed + body {
+        /* Match the height of the collapsed desktop navbar */
+        padding-top: 70px; /* Adjust this value based on the actual height of your collapsed desktop navbar */
+    }
+
+
+    .navbar-desktop {
+        display: block; /* Show desktop container */
+    }
+
+    .navbar-mobile {
+        display: none; /* Hide mobile container */
+    }
+
+    .navbar-desktop-full {
+        display: flex; /* Initially show full desktop navbar */
+    }
+
+    .navbar-desktop-collapsed {
+        display: none; /* Initially hide collapsed desktop navbar */
+    }
+
+    /* Desktop Carousel Width Adjustment (Ensure 4 items fit perfectly) */
+    .carousel-container {
+        padding: 0 40px; /* Add padding for arrows */
+    }
+
+    .product-card {
+        /* Calculate width for 4 items with 30px gap (15px margin on each side) */
+        /* Container width = 1200px (max-width) - 40px (container padding) = 1160px */
+        /* Carousel container padding = 40px (20px on each side) */
+        /* Available space for cards = 1160px - 40px = 1120px */
+        /* Total gap space between 4 cards = 3 * 30px = 90px */
+        /* Space for cards content = (1120px - 90px) / 4 = 1030px / 4 = 257.5px */
+        min-width: 257.5px; /* Explicit width for desktop */
+        margin: 0 15px; /* Keep 15px margin on each side */
+    }
+
+     .carousel-track .product-card:first-child {
+        margin-left: 0; /* Remove left margin for the first card */
+    }
+
+    .carousel-track .product-card:last-child {
+        margin-right: 0;
+    }
+
+     /* Hide footer toggle icon on desktop */
+    .footer-toggle-icon {
+        display: none;
+    }
+
+     /* Ensure footer content is visible on desktop */
+    .footer-col-content {
+        max-height: none !important; /* Override mobile max-height */
+        overflow: visible !important; /* Override mobile overflow */
+        transition: none !important; /* Override mobile transition */
+    }
+
+     /* Remove default margin-bottom from footer h3 when toggle is present */
+    .footer-col-header h3 {
+        margin-bottom: 20px; /* Restore desktop margin */
+    }
+
+     /* Show desktop sidebar and hide mobile popup */
+     .cart-sidebar {
+         display: flex; /* Show on desktop when active */
+     }
+
+     .cart-popup {
+         display: none; /* Hide on desktop */
+     }
+}
+
+
+@media (max-width: 1024px) {
+    /* Tablet and Mobile Styles */
+    .navbar {
+        position: static; /* Navbar is static on mobile */
+        padding: 15px 0; /* Restore mobile padding */
+    }
+
+    body {
+        padding-top: 0; /* No padding needed on mobile */
+    }
+
+    .navbar-desktop {
+        display: none; /* Hide desktop navbar on mobile */
+    }
+
+    .navbar-mobile {
+        display: flex; /* Show mobile navbar on mobile */
+    }
+
+     /* Hide desktop-specific utility icons on mobile */
+    .navbar-utility-desktop {
+        display: none;
+    }
+
+
+    .navbar .container {
+        flex-direction: column;
+        gap: 10px; /* Reduced gap */
+    }
+
+    .navbar-top-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        flex-wrap: nowrap; /* Prevent wrapping in the top row */
+    }
+
+    .navbar-brand-mobile {
+        margin-right: 10px; /* Reduced margin */
+    }
+
+    .navbar-toggler {
+        display: block; /* Show hamburger menu on smaller screens */
+         font-size: 1.5rem; /* Ensure appropriate size */
+    }
+
+    .search-box-mobile {
+        display: flex; /* Show search box on mobile */
+        width: 100%; /* Full width */
+        margin-top: 10px; /* Space below top row */
+    }
+
+    .search-box-mobile input {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .search-box-mobile button {
+        padding: 10px;
+        font-size: 1.1rem; /* Ensure appropriate size */
+    }
+
+    .navbar-utility-mobile {
+        display: flex; /* Show utility icons on mobile */
+        align-items: center;
+        gap: 10px; /* Space between icons */
+        justify-content: flex-end; /* Align to the right */
+        width: 100%;
+    }
+
+    /* Mobile utility icons size - hide text */
+    .navbar-utility-mobile .btn-icon .btn-text {
+        display: none;
+    }
+
+    .navbar-utility-mobile .btn-icon i {
+         font-size: 1.3rem; /* Ensure appropriate size */
+    }
+
+    /* Show mobile location field and hide the icon */
+     .mobile-location-icon {
+         display: none;
+     }
+
+     .mobile-location-field {
+         display: flex; /* Show on mobile */
+     }
+
+
+    .navbar-mobile-menu {
+        overflow: hidden; /* Hide when collapsed */
+        max-height: 0; /* Start collapsed */
+        transition: max-height 0.3s ease-in-out; /* Smooth collapse/expand */
+        width: 100%;
+        background-color: var(--bg-darker); /* Match navbar background */
+        padding: 0 20px; /* Add padding */
+    }
+
+    .navbar-mobile-menu.active {
+        max-height: 300px; /* Adjust as needed based on content */
+        padding: 10px 20px; /* Add padding when expanded */
+    }
+
+    .navbar-nav-mobile ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 0; /* Add padding inside the menu */
+    }
+
+    .navbar-nav-mobile a {
+        color: var(--text-color);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        display: block; /* Make links block for better tapping */
+        padding: 5px 0; /* Add padding for tapping */
+    }
+
+    .navbar-nav-mobile a:hover {
+        color: var(--heading-color);
+    }
+
+     /* Remove mobile location selection styles */
+    .mobile-location-selection {
+        display: none;
+    }
+
+
+    .hero-section .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
+    }
+
+     .why-choose-us-section .container {
+        flex-direction: column;
+    }
+
+    .why-choose-us-content h2 {
+        text-align: center;
+    }
+
+    .why-choose-us-content ul {
+        text-align: left; /* Keep list items left-aligned */
+        display: inline-block; /* Center the ul block */
+    }
+
+    .why-choose-us-image {
+        order: -1; /* Move image above content on smaller screens */
+    }
+
+    .footer-grid {
+        /* Adjust grid for tablet/mobile when 3 columns + 2 items below */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+     .footer-col {
+        text-align: center;
+    }
+
+    .footer-col ul {
+        padding: 0;
+    }
+
+    .social-icons,
+    .payment-icons {
+        justify-content: center;
+    }
+
+    .newsletter-form {
+        max-width: 300px; /* Limit form width */
+        margin: 15px auto 0 auto;
+    }
+
+    /* Carousel adjustments for tablet */
+    .carousel-container {
+        padding: 0 20px; /* Adjust padding for arrows */
+    }
+
+    .product-card {
+        min-width: calc(50% - 20px); /* Show 2 cards with 20px gap */
+        margin: 0 10px;
+    }
+
+     .carousel-track .product-card:first-child {
+        margin-left: 0;
+    }
+
+    .carousel-track .product-card:last-child {
+        margin-right: 0;
+    }
+
+     .carousel-arrow {
+        padding: 10px 8px;
+    }
+
+    /* Features Section Mobile Layout */
+    .feature-item {
+        flex-direction: row; /* Arrange icon and text horizontally */
+        text-align: left; /* Align text left */
+        align-items: flex-start; /* Align items to the top */
+    }
+
+    .feature-icon {
+        flex-shrink: 0; /* Prevent icon from shrinking */
+        margin-right: 15px; /* Space between icon and text */
+        margin-bottom: 0; /* Remove bottom margin */
+    }
+
+    .feature-text {
+         text-align: left; /* Align text left */
+    }
+
+     /* Show footer toggle icon on mobile for specific columns */
+    .footer-col:nth-child(2) .footer-toggle-icon, /* About */
+    .footer-col:nth-child(3) .footer-toggle-icon, /* Information */
+    .footer-col:nth-child(4) .footer-toggle-icon { /* Product Categories */
+        display: block;
+    }
+
+
+     /* Hide footer content by default on mobile for specific columns */
+    .footer-col:nth-child(2) .footer-col-content, /* About */
+    .footer-col:nth-child(3) .footer-col-content, /* Information */
+    .footer-col:nth-child(4) .footer-col-content { /* Product Categories */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    /* Show footer content when active on mobile for specific columns */
+    .footer-col.active .footer-col-content {
+        max-height: 500px; /* Adjust as needed */
+    }
+
+     /* Remove default margin-bottom from footer h3 when toggle is present */
+    .footer-col-header h3 {
+        margin-bottom: 0;
+    }
+
+    /* Ensure "Become a Partner" and "Join With Us" stack correctly on mobile */
+     .footer-col:nth-child(5), /* Become a Partner */
+     .footer-col:nth-child(6) { /* Join With Us */
+         /* Restore default block display and spacing on mobile */
+         margin-bottom: 30px; /* Add some space between stacked columns */
+     }
+
+     .footer-col:nth-child(6) { /* Join With Us */
+         margin-bottom: 0; /* Remove bottom margin for the last column before footer-bottom */
+     }
+
+
+    /* Show Back to Top button on mobile */
+    #back-to-top-btn {
+        display: flex; /* Show on mobile */
+    }
+
+     /* Hide desktop sidebar and show mobile popup */
+     .cart-sidebar {
+         display: none; /* Hide on tablet/mobile */
+     }
+
+     .cart-popup {
+         display: flex; /* Show on tablet/mobile when active */
+     }
+
+
+}
+
+
+@media (max-width: 768px) {
+     /* Mobile Styles */
+     .navbar-top-mobile {
+        flex-wrap: wrap; /* Allow wrapping in the top row on very small screens */
+        justify-content: center; /* Center items if they wrap */
+        gap: 10px; /* Add some gap if wrapping occurs */
+    }
+
+     .navbar-brand-mobile,
+     .navbar-utility-mobile,
+     .navbar-toggler {
+        margin-right: 0; /* Remove margins on very small screens */
+     }
+
+     .navbar-utility-mobile {
+         width: 100%; /* Full width for utility icons on very small screens */
+         justify-content: center;
+     }
+
+    /* Show mobile location field and hide the icon */
+     .mobile-location-icon {
+         display: none;
+     }
+
+     .mobile-location-field {
+         display: flex; /* Show on mobile */
+     }
+
+
+    h1 {
+        font-size: 2rem; /* Adjusted font size for very small mobile */
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-padding {
+        padding: 40px 0; /* Reduced padding on very small mobile */
+    }
+
+     .category-grid,
+     .features-grid,
+     .footer-grid {
+        grid-template-columns: 1fr; /* Stack columns on very small screens */
+    }
+
+    .faq-question h3 {
+        font-size: 1rem;
+    }
+
+    .footer-col ul {
+        text-align: center;
+    }
+
+    /* Carousel adjustments for mobile */
+     .carousel-container {
+        padding: 0 10px; /* Adjust padding for arrows */
+    }
+
+    .product-card {
+        min-width: calc(100% - 10px); /* Show 1 card with 10px gap */
+        margin: 0 5px;
+    }
+
+    .carousel-track .product-card:first-child {
+        margin-left: 0;
+    }
+
+    .carousel-track .product-card:last-child {
+        margin-right: 0;
+    }
+
+     .carousel-arrow {
+        padding: 8px 6px;
+        font-size: 0.9rem;
+    }
+
+     /* Features Section Mobile Layout */
+    .feature-item {
+        flex-direction: column; /* Stack icon and text vertically on smaller mobile */
+        text-align: center; /* Center text */
+        align-items: center;
+        gap: 15px;
+    }
+
+    .feature-icon {
+        margin-right: 0; /* Remove margin */
+        margin-bottom: 15px; /* Add bottom margin */
+    }
+
+    .feature-text {
+         text-align: center; /* Center text */
+    }
+
+    /* Show footer toggle icon on mobile for specific columns */
+    .footer-col:nth-child(2) .footer-toggle-icon, /* About */
+    .footer-col:nth-child(3) .footer-toggle-icon, /* Information */
+    .footer-col:nth-child(4) .footer-toggle-icon { /* Product Categories */
+        display: block;
+    }
+
+     /* Hide footer content by default on mobile for specific columns */
+    .footer-col:nth-child(2) .footer-col-content, /* About */
+    .footer-col:nth-child(3) .footer-col-content, /* Information */
+    .footer-col:nth-child(4) .footer-col-content { /* Product Categories */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+
+    /* Show footer content when active on mobile for specific columns */
+    .footer-col.active .footer-col-content {
+        max-height: 500px; /* Adjust as needed */
+    }
+
+     /* Remove default margin-bottom from footer h3 when toggle is present */
+    .footer-col-header h3 {
+        margin-bottom: 0;
+    }
+
+    /* Ensure "Become a Partner" and "Join With Us" stack correctly on mobile */
+     .footer-col:nth-child(5), /* Become a Partner */
+     .footer-col:nth-child(6) { /* Join With Us */
+         /* Restore default block display and spacing on mobile */
+         margin-bottom: 30px; /* Add some space between stacked columns */
+     }
+
+     .footer-col:nth-child(6) { /* Join With Us */
+         margin-bottom: 0; /* Remove bottom margin for the last column before footer-bottom */
+     }
+
+
+    /* Show Back to Top button on mobile */
+    #back-to-top-btn {
+        display: flex; /* Show on mobile */
+    }
+     /* Adjust mobile popup size */
+     .cart-popup {
+         width: 95%;
+     }
+}

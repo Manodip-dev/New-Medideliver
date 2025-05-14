@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Trusted Medicine Delivery</title>
+    <link rel="stylesheet" href="./fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-desktop">
+                <div class="navbar-desktop-full">
+                    <div class="navbar-top">
+                        <div class="navbar-brand-location">
+                            <div class="navbar-brand">
+                                <a href="#" class="site-logo">MediDeliver</a>
+                            </div>
+                            <div class="navbar-location" id="desktop-location-trigger">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="current-location" class="location-text">Select Location</span>
+                                <i class="fas fa-chevron-down location-dropdown-icon"></i>
+                                </div>
+                        </div>
+                        <nav class="navbar-nav-top">
+                            <ul>
+                                <li><a href="#categories">Buy Medicines</a></li>
+                                <li><a href="#">Find Nearby Pharma Stores</a></li>
+                                <li><a href="#">Find Nearby Labs</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="navbar-bottom">
+                        <div class="search-box">
+                            <input type="text" placeholder="Search Medicines..." class="search-input">
+                            <button class="search-button"><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="navbar-utility-bottom">
+                             <a href="#" class="btn btn-icon">
+                                <i class="fas fa-tags"></i>
+                                <span class="btn-text">Offers</span>
+                            </a>
+                            <a href="./log-in_index.html" class="btn btn-icon">
+                                <i class="fas fa-user"></i>
+                                <span class="btn-text">Login</span>
+                            </a>
+                            <button id="theme-toggle-desktop-full" class="btn btn-icon theme-toggle-btn" aria-label="Toggle theme">
+                                 </button>
+                            <a href="#" class="btn btn-icon cart-btn">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="btn-text">Cart</span>
+                                <span class="cart-count">0</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="navbar-desktop-collapsed">
+                     <div class="navbar-brand-search">
+                        <div class="navbar-brand-collapsed">
+                            <a href="#" class="site-logo">MediDeliver</a>
+                        </div>
+                         <div class="search-box-collapsed">
+                            <input type="text" placeholder="Search..." class="search-input-collapsed">
+                            <button class="search-button-collapsed"><i class="fas fa-search"></i></button>
+                        </div>
+                     </div>
+                     <div class="navbar-essential-desktop-collapsed">
+                         <button id="theme-toggle-desktop-collapsed" class="btn btn-icon theme-toggle-btn" aria-label="Toggle theme">
+                             </button>
+                         <a href="#" class="btn btn-icon" aria-label="Offers">
+                             <i class="fas fa-tags"></i>
+                             <span class="btn-text">Offers</span>
+                         </a>
+                         <a href="./log-in_index.html" class="btn btn-icon" aria-label="Login">
+                             <i class="fas fa-user"></i>
+                             <span class="btn-text">Login</span>
+                         </a>
+                         <a href="#" class="btn btn-icon cart-btn" aria-label="View Cart">
+                            <i class="fas fa-shopping-cart"></i>
+                             <span class="btn-text">Cart</span>
+                             <span class="cart-count">0</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="navbar-mobile">
+                 <div class="navbar-top-mobile">
+                     <div class="navbar-brand-mobile">
+                         <a href="#" class="site-logo">MediDeliver</a>
+                     </div>
+                     <button class="navbar-toggler" aria-label="Toggle navigation menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                 </div>
+                 <div class="search-box-mobile">
+                     <input type="text" placeholder="Search..." class="search-input">
+                     <button class="search-button"><i class="fas fa-search"></i></button>
+                 </div>
+                 <div class="navbar-utility-mobile">
+                     <button class="btn btn-icon mobile-location-trigger" aria-label="Select Location">
+                        <i class="fas fa-map-marker-alt"></i>
+                     </button>
+                     <button id="theme-toggle-mobile" class="btn btn-icon theme-toggle-btn" aria-label="Toggle theme">
+                         </button>
+                     <a href="#" class="btn btn-icon" aria-label="Offers"><i class="fas fa-tags"></i></a>
+                     <a href="./log-in_index.html" class="btn btn-icon" aria-label="Login"><i class="fas fa-user"></i></a>
+                      <a href="#" class="btn btn-icon cart-btn" aria-label="View Cart"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
+                 </div>
+                <div class="navbar-mobile-menu">
+                    <nav class="navbar-nav-mobile">
+                        <ul>
+                            <li><a href="#categories">Buy Medicines</a></li>
+                            <li><a href="#">Find Nearby Pharma Stores</a></li>
+                            <li><a href="#">Find Nearby Labs</a></li>
+                        </ul>
+                    </nav>
+                     </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Get Your Medicines Delivered Fast & Safely</h1>
+                <p>Order prescription and OTC medicines online with ease. Authentic products, delivered to your doorstep.</p>
+                <div class="hero-actions">
+                    <a href="shopping.html" class="btn btn-primary">Shop Now</a>
+                    <a href="#" class="btn btn-secondary"><i class="fas fa-upload"></i> Upload Prescription</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="./images/Hero Section.jpg" alt="Medicine Delivery">
+            </div>
+        </div>
+    </section>
+
+    <section id="categories" class="categories-section section-padding">
+        <div class="container">
+            <h2>Shop by Category</h2>
+            <div class="category-grid">
+                <a href="#" class="category-box">
+                    <i class="fas fa-pills category-icon"></i>
+                    <h3>Basic Medicines</h3>
+                </a>
+                 <a href="#" class="category-box">
+                    <i class="fas fa-house-medical category-icon"></i>
+                    <h3>Home Essentials</h3>
+                </a>
+                <a href="#" class="category-box">
+                    <i class="fas fa-venus category-icon"></i>
+                    <h3>Women's Care</h3>
+                </a>
+                <a href="#" class="category-box">
+                    <i class="fas fa-baby category-icon"></i>
+                    <h3>Baby Care</h3>
+                </a>
+                 <a href="#" class="category-box">
+                    <i class="fas fa-hands-holding category-icon"></i>
+                    <h3>Elderly Care</h3>
+                </a>
+                <a href="#" class="category-box">
+                    <i class="fas fa-tooth category-icon"></i>
+                    <h3>Dental Care</h3>
+                </a>
+                <a href="#" class="category-box">
+                    <i class="fas fa-hand-holding-medical category-icon"></i>
+                    <h3>Pain Relief</h3>
+                </a>
+                 <a href="#" class="category-box">
+                    <i class="fas fa-shield-virus category-icon"></i>
+                    <h3>Cold & Immunity</h3>
+                </a>
+                 <a href="#" class="category-box">
+                    <i class="fas fa-heartbeat category-icon"></i>
+                    <h3>Heart Care</h3>
+                </a>
+                 <a href="#" class="category-box">
+                    <i class="fas fa-brain category-icon"></i>
+                    <h3>Neurology</h3>
+                </a>
+                 <a href="#" class="category-box">
+                    <i class="fas fa-bone category-icon"></i>
+                    <h3>Orthopedics</h3>
+                </a>
+                 <a href="#" class="category-box">
+                    <i class="fas fa-eye category-icon"></i>
+                    <h3>Eye Care</h3>
+                </a>
+                </div>
+        </div>
+    </section>
+
+    <section class="featured-section section-padding bg-darker">
+        <div class="container">
+            <h2>Special Offers & Deals</h2>
+            <div class="carousel-container">
+                <div class="carousel-track featured-grid">
+                    <div class="product-card" data-product-id="1" data-product-name="Product Name 1" data-product-price="99.00" data-product-image="./images/Product Image (1).jpg">
+                        <img src="./images/Product (1).jpg" alt="Product Name 1">
+                        <div class="card-content">
+                            <h3>Product Name 1</h3>
+                            <p class="product-description">Short description of the product.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹99.00</span>
+                                <span class="old-price">₹129.00</span>
+                            </div>
+                            <span class="discount-badge">20% OFF</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-product-id="2" data-product-name="Brand Deal Item 2" data-product-price="195.00" data-product-image="./images/Product Image (2).jpg">
+                         <img src="./images/Product (2).jpg" alt="Product Name 2">
+                        <div class="card-content">
+                            <h3>Brand Deal Item 2</h3>
+                            <p class="product-description">Special offer from a top brand.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹195.00</span>
+                                <span class="old-price">₹250.00</span>
+                            </div>
+                             <span class="discount-badge">Save ₹55.00</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                            <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="3" data-product-name="Today's Special 3" data-product-price="50.00" data-product-image="./images/Product Image (3).jpg">
+                         <img src="./images/Product (3).jpg" alt="Product Name 3">
+                        <div class="card-content">
+                            <h3>Today's Special 3</h3>
+                            <p class="product-description">Limited time offer!</p>
+                            <div class="product-price">
+                                <span class="current-price">₹50.00</span>
+                                <span class="old-price">₹75.00</span>
+                            </div>
+                             <span class="discount-badge">Flash Deal!</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                            <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="4" data-product-name="Product Name 4" data-product-price="150.00" data-product-image="./images/Product Image (4).jpg">
+                         <img src="./images/Product (4).jpg" alt="Product Name 4">
+                        <div class="card-content">
+                            <h3>Product Name 4</h3>
+                            <p class="product-description">Another great offer.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹150.00</span>
+                                <span class="old-price">₹180.00</span>
+                            </div>
+                             <span class="discount-badge">₹30 OFF</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="5" data-product-name="Product Name 5" data-product-price="220.00" data-product-image="./images/Product Image (5).jpg">
+                         <img src="./images/Product (5).jpg" alt="Product Name 5">
+                        <div class="card-content">
+                            <h3>Product Name 5</h3>
+                            <p class="product-description">Check out this deal.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹220.00</span>
+                                <span class="old-price">₹280.00</span>
+                            </div>
+                             <span class="discount-badge">Save ₹60.00</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="6" data-product-name="Product Name 6" data-product-price="80.00" data-product-image="./images/Product Image (6).jpg">
+                         <img src="./images/Product (6).jpg" alt="Product Name 6">
+                        <div class="card-content">
+                            <h3>Product Name 6</h3>
+                            <p class="product-description">Limited stock!</p>
+                            <div class="product-price">
+                                <span class="current-price">₹80.00</span>
+                                <span class="old-price">₹100.00</span>
+                            </div>
+                             <span class="discount-badge">20% OFF</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="7" data-product-name="Special bundle offer" data-product-price="350.00" data-product-image="./images/Product Image (7).jpg">
+                         <img src="./images/Product (7).jpg" alt="Product Name 7">
+                        <div class="card-content">
+                            <h3>Special bundle offer.</h3>
+                            <p class="product-description">Limited time offer!</p>
+                            <div class="product-price">
+                                <span class="current-price">₹350.00</span>
+                                <span class="old-price">₹400.00</span>
+                            </div>
+                             <span class="discount-badge">Bundle Deal</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="8" data-product-name="Product Name 8" data-product-price="110.00" data-product-image="./images/Product Image (8).jpg">
+                         <img src="./images/Product (8).jpg" alt="Product Name 8">
+                        <div class="card-content">
+                            <h3>Product Name 8</h3>
+                            <p class="product-description">Don't miss out!</p>
+                            <div class="product-price">
+                                <span class="current-price">₹110.00</span>
+                                <span class="old-price">₹130.00</span>
+                            </div>
+                             <span class="discount-badge">₹20 OFF</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="9" data-product-name="Product Name 9" data-product-price="60.00" data-product-image="./images/Product Image (9).jpg">
+                         <img src="./images/Product (9).jpg" alt="Product Name 9">
+                        <div class="card-content">
+                            <h3>Product Name 9</h3>
+                            <p class="product-description">Limited time only.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹60.00</span>
+                                <span class="old-price">₹80.00</span>
+                            </div>
+                             <span class="discount-badge">Save ₹20.00</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="10" data-product-name="Product Name 10" data-product-price="299.00" data-product-image="./images/Product Image (10).jpg">
+                        <img src="./images/Product (10).jpg" alt="Product Name 10">
+                        <div class="card-content">
+                            <h3>Product Name 10</h3>
+                            <p class="product-description">Amazing discount.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹299.00</span>
+                                <span class="old-price">₹350.00</span>
+                            </div>
+                             <span class="discount-badge">₹51 OFF</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="11" data-product-name="Product Name 11" data-product-price="450.00" data-product-image="./images/Product Image (11).jpg">
+                         <img src="./images/Product (11).jpg" alt="Product Name 11">
+                        <div class="card-content">
+                            <h3>Product Name 11</h3>
+                            <p class="product-description">Best value.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹450.00</span>
+                                <span class="old-price">₹500.00</span>
+                            </div>
+                             <span class="discount-badge">Save ₹50.00</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="12" data-product-name="Product Name 12" data-product-price="180.00" data-product-image="./images/Product Image (12).jpg">
+                         <img src="./images/Product (12).jpg" alt="Product Name 12">
+                        <div class="card-content">
+                            <h3>Product Name 12</h3>
+                            <p class="product-description">Top seller offer.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹180.00</span>
+                                <span class="old-price">₹200.00</span>
+                            </div>
+                             <span class="discount-badge">₹20 OFF</span>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow left"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow right"><i class="fas fa-chevron-right"></i></button>
+                <div class="carousel-dots">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="most-selling-section section-padding">
+        <div class="container">
+            <h2>Most Popular Items</h2>
+            <div class="carousel-container">
+                <div class="carousel-track most-selling-grid">
+                    <div class="product-card" data-product-id="13" data-product-name="Popular Product 1" data-product-price="80.00" data-product-image="./images/Popular Item (1).jpg">
+                         <img src="./images/Popular Item (1).jpg" alt="Popular Item 1">
+                        <div class="card-content">
+                            <h3>Popular Product 1</h3>
+                            <p class="product-description">Customers love this one!</p>
+                            <div class="product-price">
+                                <span class="current-price">₹80.00</span>
+                            </div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-product-id="14" data-product-name="Popular Product 2" data-product-price="150.00" data-product-image="./images/Popular Item (2).jpg">
+                         <img src="./images/Popular Item (2).jpg" alt="Popular Item 2">
+                        <div class="card-content">
+                            <h3>Popular Product 2</h3>
+                            <p class="product-description">High demand item.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹150.00</span>
+                            </div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="15" data-product-name="Popular Product 3" data-product-price="65.00" data-product-image="./images/Popular Item (3).jpg">
+                         <img src="./images/Popular Item (3).jpg" alt="Popular Item 3">
+                        <div class="card-content">
+                            <h3>Popular Product 3</h3>
+                            <p class="product-description">A household favorite.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹65.00</span>
+                            </div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="16" data-product-name="Popular Product 4" data-product-price="120.00" data-product-image="./images/Popular Item (4).jpg">
+                         <img src="./images/Popular Item (4).jpg" alt="Popular Item 4">
+                        <div class="card-content">
+                            <h3>Popular Product 4</h3>
+                            <p class="product-description">Often purchased together.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹120.00</span>
+                            </div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="17" data-product-name="Popular Product 5" data-product-price="150.00" data-product-image="./images/Popular Item (5).jpg">
+                         <img src="./images/Popular Item (5).jpg" alt="Popular Item 5">
+                        <div class="card-content">
+                            <h3>Popular Product 5</h3>
+                            <p class="product-description">High demand item.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹150.00</span>
+                            </div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="18" data-product-name="Popular Product 6" data-product-price="65.00" data-product-image="./images/Popular Item (6).jpg">
+                         <img src="./images/Popular Item (6).jpg" alt="Popular Item 6">
+                        <div class="card-content">
+                            <h3>Popular Product 6</h3>
+                            <p class="product-description">A household favorite.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹65.00</span>
+                            </div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="product-card" data-product-id="19" data-product-name="Popular Product 7" data-product-price="120.00" data-product-image="./images/Popular Item (7).jpg">
+                         <img src="./images/Product (7).jpg" alt="Product Name 7">
+                        <div class="card-content">
+                            <h3>Popular Product 7</h3>
+                            <p class="product-description">Often purchased together.</p>
+                            <div class="product-price">
+                                <span class="current-price">₹120.00</span>
+                            </div>
+                            <button class="btn btn-primary btn-small add-to-cart-btn">Add to Cart</button>
+                             <div class="quantity-control hidden">
+                                <button class="quantity-btn decrease">-</button>
+                                <span class="quantity">1</span>
+                                <button class="quantity-btn increase">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow left"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow right"><i class="fas fa-chevron-right"></i></button>
+                 <div class="carousel-dots">
+                    </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="features-section section-padding bg-darker">
+        <div class="container">
+            <h2>Our Features & Availability</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <div class="feature-text">
+                        <h3>24/7 Service</h3>
+                        <p>Order anytime, day or night.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-certificate feature-icon"></i>
+                     <div class="feature-text">
+                        <h3>Authenticity Guaranteed</h3>
+                        <p>Genuine medicines from trusted sources.</p>
+                    </div>
+                </div>
+                 <div class="feature-item">
+                    <i class="fas fa-truck-fast feature-icon"></i>
+                     <div class="feature-text">
+                        <h3>Fast Delivery</h3>
+                        <p>Quick and reliable delivery to your location.</p>
+                    </div>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                     <div class="feature-text">
+                        <h3>Secure Payments</h3>
+                        <p>Your transactions are safe and secure.</p>
+                    </div>
+                </div>
+                 <div class="feature-item">
+                    <i class="fas fa-users feature-icon"></i>
+                     <div class="feature-text">
+                        <h3>Expert Support</h3>
+                        <p>Get help from qualified professionals.</p>
+                    </div>
+                </div>
+                 <div class="feature-item">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                     <div class="feature-text">
+                        <h3>Easy to Use App</h3>
+                        <p>Order seamlessly from our mobile app.</p>
+                    </div>
+                </div>
+                 <div class="feature-item">
+                    <i class="fas fa-tags feature-icon"></i>
+                     <div class="feature-text">
+                        <h3>Great Offers</h3>
+                        <p>Find amazing deals and discounts.</p>
+                    </div>
+                </div>
+                 <div class="feature-item">
+                    <i class="fas fa-prescription feature-icon"></i>
+                     <div class="feature-text">
+                        <h3>Prescription Upload</h3>
+                        <p>Easily upload and order your prescribed medicines.</p>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us-section section-padding">
+        <div class="container">
+            <div class="why-choose-us-content">
+                <h2>Why Choose Us?</h2>
+                <p>In today's fast-paced world, getting access to essential medicines shouldn't be a hassle. We bring the pharmacy to you, offering unparalleled convenience and reliability.</p>
+                <ul>
+                    <li><i class="fas fa-check-circle"></i> Save time and effort by ordering from home.</li>
+                    <li><i class="fas fa-check-circle"></i> Access a wide range of medicines and healthcare products.</li>
+                    <li><i class="fas fa-check-circle"></i> Discreet and private delivery.</li>
+                    <li><i class="fas fa-check-circle"></i> Reliable service you can trust.</li>
+                    <li><i class="fas fa-check-circle"></i> Competitive prices and regular offers.</li>
+                    <li><i class="fas fa-check-circle"></i> Easy prescription management.</li>
+                </ul>
+                <a href="shopping.html" class="btn btn-primary">Start Shopping</a>
+            </div>
+             <div class="why-choose-us-image">
+                <img src="./images/Why Choose Us.jpg" alt="Why Choose Us">
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq-section section-padding bg-darker">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I place an order?</h3>
+                         <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can place an order by searching for your medicines and adding them to the cart, or by uploading a valid prescription.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are the delivery times?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Delivery times vary depending on your location and the availability of the medicines. You can see an estimated delivery time during the checkout process.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is it safe to buy medicines online?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we ensure that all medicines are sourced from reputable suppliers and stored and handled according to safety standards. Your data is also kept secure.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What payment methods are accepted?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept various payment methods including credit/debit cards, net banking, and popular digital wallets. Cash on delivery may be available in select locations.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I upload a prescription?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can upload your prescription during the order process or by clicking the "Upload Prescription" button in the header or hero section. Please ensure the image is clear and readable.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I return or exchange medicines?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our return and exchange policy depends on the type of medicine and the reason for return. Please refer to our detailed Return Policy linked in the footer for more information.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I track my order?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Once your order is dispatched, you will receive a tracking link via email or SMS. You can use this link to get real-time updates on your delivery status.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Do you offer consultations?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we offer online consultations with qualified pharmacists to help you with your medication queries.</p>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <a href="#" class="site-logo">MediDeliver</a>
+                    <p>Your reliable partner for online medicine delivery. Fast, safe, and authentic.</p>
+                    <div class="social-icons">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <div class="footer-col-header">
+                        <h3>About</h3>
+                         <i class="fas fa-plus footer-toggle-icon"></i>
+                    </div>
+                    <ul class="footer-col-content">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                        <li><a href="#">Find a Pharmacy</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">Health Queries</a></li>
+                        <li><a href="#">Know Your Health Credits</a></li>
+                        <li><a href="#">Corporate</a></li>
+                    </ul>
+                </div>
+                 <div class="footer-col">
+                     <div class="footer-col-header">
+                        <h3>Information</h3>
+                         <i class="fas fa-plus footer-toggle-icon"></i>
+                    </div>
+                    <ul class="footer-col-content">
+                        <li><a href="#">Terms and Conditions</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Shipping Information</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                     <div class="footer-col-header">
+                        <h3>Product Categories</h3>
+                         <i class="fas fa-plus footer-toggle-icon"></i>
+                    </div>
+                    <ul class="footer-col-content">
+                        <li><a href="#">View All Categories</a></li>
+                        <li><a href="#">View All Brands</a></li>
+                        <li><a href="#">View All Salts</a></li>
+                        <li><a href="#">View All Medicine</a></li>
+                        <li><a href="#">View All OTC</a></li>
+                        <li><a href="#">View All Manufacturers</a></li>
+                        <li><a href="#">Health Devices</a></li>
+                        <li><a href="#">Personal Care</a></li>
+                        <li><a href="#">Baby Care</li>
+                        <li><a href="#">Nutrition</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                      <h3>Become a Partner</h3>
+                     <p>Join our network and grow your business with us.</p>
+                     <button class="btn btn-secondary btn-small">Join Now</button>
+                     </div>
+                 <div class="footer-col">
+                     <h3>Join With Us</h3>
+                    <p>Subscribe to our newsletter for updates and offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                    <div class="payment-icons">
+                         <i class="fab fa-cc-visa"></i>
+                         <i class="fab fa-cc-mastercard"></i>
+                         <i class="fab fa-cc-paypal"></i>
+                         <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MediDeliver. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top-btn" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="cart-overlay"></div>
+
+    <div class="cart-sidebar">
+        <div class="sidebar-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="sidebar-body">
+            <div class="cart-empty-message">Your cart is empty.</div>
+             <div class="cart-items-list">
+                 </div>
+        </div>
+        <div class="sidebar-footer">
+            <div class="cart-summary">
+                <p>Total: <span class="cart-total-price">₹0.00</span></p>
+            </div>
+             <button class="btn btn-secondary add-more-items-btn">Add More Item</button>
+             <a href="cart.html" class="btn btn-primary go-to-cart-btn">Go to cart</a>
+             <a href="checkout.html" class="btn btn-primary checkout-btn">Checkout Directly</a>
+        </div>
+    </div>
+
+    <div class="cart-popup">
+        <div class="popup-header">
+            <h3>Shopping Cart</h3>
+            <button class="close-cart-btn"><i class="fas fa-times"></i></button>
+        </div>
+         <div class="popup-body">
+            <div class="cart-empty-message">Your cart is empty.</div>
+              <div class="cart-items-list">
+                </div>
+        </div>
+        <div class="popup-footer">
+             <div class="cart-summary">
+                <p>Total: <span class="cart-total-price">₹0.00</span></p>
+            </div>
+             <button class="btn btn-secondary add-more-items-btn">Add More Item</button>
+             <a href="cart.html" class="btn btn-primary go-to-cart-btn">Go to cart</a>
+             <a href="checkout.html" class="btn btn-primary checkout-btn">Checkout Directly</a>
+        </div>
+    </div>
+
+    <div class="location-overlay"></div>
+    <div class="location-modal">
+        <div class="modal-header">
+            <h3>Select Your Location</h3>
+            <button class="close-location-btn"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="modal-body">
+            <div class="location-option" id="select-current-location">
+                <i class="fas fa-location-arrow"></i>
+                <span>Select your current location</span>
+            </div>
+            <div class="location-option" id="enter-manual-location">
+                <i class="fas fa-keyboard"></i>
+                <span>Enter location/pincode manually</span>
+            </div>
+            <div class="manual-location-input hidden">
+                <input type="text" placeholder="Enter Pincode or City">
+                <button class="btn btn-primary btn-small confirm-manual-location">Confirm</button>
+            </div>
+        </div>
+         <div class="modal-footer">
+             </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
